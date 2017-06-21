@@ -7,7 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>sso!!!</h1>
-	<a href="login.jsp">登录</a>
+	<h1>cart!!!</h1>
+	
+	<a href="cart.jsp">加入购物车</a>
 </body>
 </html>
