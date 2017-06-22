@@ -10,5 +10,9 @@
 	<h1>cart!!!</h1>
 	
 	<a href="cart.jsp">加入购物车</a>
+	<br>
+	<br>
+	<a href="exercise.jsp">练习测试</a>
+	
 </body>
 </html>

@@ -19,6 +19,8 @@
 	<link id="bootstrap-style" href="css/bootstrap.min.css" rel="stylesheet">
 	<link id="base-style" href="css/style.css" rel="stylesheet">
 	<link id="base-style" href="css/animate.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/widget/cart_calculator.css"/>
+	
 
 	<!-- end: CSS -->
 	<style>
@@ -76,6 +78,8 @@
 			    position: relative;
 			    box-shadow: 5px 4px 1em #666;
 			    border-radius:10px;
+			    color: #fff;
+   			    text-shadow: 1px 1px 1px #FFF;
 	   }
 	   .cart-warp{}
 	   .cart-warp .cart .cart-thead .column{float:left;}
@@ -202,7 +206,7 @@
 										    line-height: 20px;
 										    _height: 116px;
 										    height:120px;
-										    background: linear-gradient(to left,#fff,#A483F3 30%,pink 70%,#fff 100%);
+										    background: linear-gradient(to left,#fff,pink 30%,pink 70%,#fff 100%);
 										    box-shadow: 5px 6px 1em #111;
 										    margin-bottom: 10px;
 								}
@@ -225,6 +229,8 @@
 								.cart-item-list .item-form .p-quantity{ width: 85px;text-align: center; line-height:80px;line-height: 80px;  }
 								.cart-item-list .item-form .p-sum{width: 168px;  padding-right: 40px;text-align: center;line-height: 80px; }
 								.cart-item-list .item-form .p-action{ width: 133px; line-height: 80px;}
+								.cart-item-list .item-form .cart_main .p-isStock{ position: relative ; top: -28px;}
+								  
 								
 								.p-img{width:100px;height:100px;overflow:hidden;}
 								.p-img img{width:87px;height:87px;border-radius:50%;}
@@ -253,7 +259,31 @@
 															<strong>¥129.00</strong>
 														</div>
 														<div class="cell p-quantity">11</div>
-														<div class="cell p-sum">1213</div>
+														<div class="cell p-sum">
+															
+															 <div class="cart_main">
+															 	<div class="submain">
+																 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
+																	 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
+																 	 </div>
+																	 <div class="shuliang" id="shuliang" >
+																	 	<span id="tmpUp" class="tmpUp">
+																	 		1
+																	 	</span>
+																	 	<span id="mainDiv" class="mainDiv">
+																	 		1
+																	 	</span>
+																	    <span id="tmpDown" class="tmpDown">
+																	 		1
+																	 	</span>
+																	 </div>
+																	   <div class="increment crFix"  onclick="cartCalc.increment(this);">
+																     <img  src="img/plus.png" width="25px" height="25px" /></div>
+															 	</div>
+															 	<span class="p-isStock">有货</span>
+															 </div>
+																												
+														</div>
 														<div class="cell p-action">删除</div>
 													</div>
 													
@@ -277,7 +307,31 @@
 															<strong>¥129.00</strong>
 														</div>
 														<div class="cell p-quantity">11</div>
-														<div class="cell p-sum">1213</div>
+														<div class="cell p-sum">
+															
+															 <div class="cart_main">
+															 	<div class="submain">
+																 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
+																	 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
+																 	 </div>
+																	 <div class="shuliang" id="shuliang" >
+																	 	<span id="tmpUp" class="tmpUp">
+																	 		1
+																	 	</span>
+																	 	<span id="mainDiv" class="mainDiv">
+																	 		1
+																	 	</span>
+																	    <span id="tmpDown" class="tmpDown">
+																	 		1
+																	 	</span>
+																	 </div>
+																	   <div class="increment crFix"  onclick="cartCalc.increment(this);">
+																     <img  src="img/plus.png" width="25px" height="25px" /></div>
+															 	</div>
+															 	<span class="p-isStock">有货</span>
+															 </div>	
+																												
+														</div>
 														<div class="cell p-action">删除</div>
 													</div>
 											</div>
@@ -300,10 +354,183 @@
 															<strong>¥129.00</strong>
 														</div>
 														<div class="cell p-quantity">11</div>
-														<div class="cell p-sum">1213</div>
+														<div class="cell p-sum">
+															
+															 <div class="cart_main">
+															 	<div class="submain">
+																 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
+																	 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
+																 	 </div>
+																	 <div class="shuliang" id="shuliang" >
+																	 	<span id="tmpUp" class="tmpUp">
+																	 		1
+																	 	</span>
+																	 	<span id="mainDiv" class="mainDiv">
+																	 		1
+																	 	</span>
+																	    <span id="tmpDown" class="tmpDown">
+																	 		1
+																	 	</span>
+																	 </div>
+																	   <div class="increment crFix"  onclick="cartCalc.increment(this);">
+																     <img  src="img/plus.png" width="25px" height="25px" /></div>
+															 	</div>
+															 	<span class="p-isStock">缺货</span>
+															 </div>														
+																												
+														</div>
 														<div class="cell p-action">删除</div>
 													</div>
 										    	</div>
+										    	
+										    	
+										    	
+										    	
+										    	
+												<div class="item-last item-item item-selected  ">
+													<div class="item-form">
+														<div class="cell p-checkbox">
+															<input type="checkbox" checked="checked" id="toggle-checkboxes_up" name="toggle-checkboxes" class="jdcheckbox" >
+														</div>
+														<div class="cell p-goods">
+															<div class=" cell p-img">
+																<img  src="//img10.360buyimg.com/cms/s80x80_jfs/t3877/80/1870019531/354511/c12f6e15/589d27cdN2dde2c55.jpg"  />
+															</div>
+															<div class="cell p-name"><a>纤麦大码女装夏新款胖mm时尚淑女图案短
+															 4XL宝蓝色预售6.21发货</a></div>
+														</div>
+														<div class="cell p-price">
+															<strong>¥129.00</strong>
+														</div>
+														<div class="cell p-quantity">11</div>
+														<div class="cell p-sum">
+															
+															 <div class="cart_main">
+															 	<div class="submain">
+																 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
+																	 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
+																 	 </div>
+																	 <div class="shuliang" id="shuliang" >
+																	 	<span id="tmpUp" class="tmpUp">
+																	 		1
+																	 	</span>
+																	 	<span id="mainDiv" class="mainDiv">
+																	 		1
+																	 	</span>
+																	    <span id="tmpDown" class="tmpDown">
+																	 		1
+																	 	</span>
+																	 </div>
+																	   <div class="increment crFix"  onclick="cartCalc.increment(this);">
+																     <img  src="img/plus.png" width="25px" height="25px" /></div>
+															 	</div>
+															 	<span class="p-isStock">缺货</span>
+															 </div>														
+																												
+														</div>
+														<div class="cell p-action">删除</div>
+													</div>
+										    	</div>
+										    	
+										    	
+										    	
+										    	
+										    	
+												<div class="item-last item-item item-selected  ">
+													<div class="item-form">
+														<div class="cell p-checkbox">
+															<input type="checkbox" checked="checked" id="toggle-checkboxes_up" name="toggle-checkboxes" class="jdcheckbox" >
+														</div>
+														<div class="cell p-goods">
+															<div class=" cell p-img">
+																<img  src="//img10.360buyimg.com/cms/s80x80_jfs/t3877/80/1870019531/354511/c12f6e15/589d27cdN2dde2c55.jpg"  />
+															</div>
+															<div class="cell p-name"><a>纤麦大码女装夏新款胖mm时尚淑女图案短
+															 4XL宝蓝色预售6.21发货</a></div>
+														</div>
+														<div class="cell p-price">
+															<strong>¥129.00</strong>
+														</div>
+														<div class="cell p-quantity">11</div>
+														<div class="cell p-sum">
+															
+															 <div class="cart_main">
+															 	<div class="submain">
+																 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
+																	 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
+																 	 </div>
+																	 <div class="shuliang" id="shuliang" >
+																	 	<span id="tmpUp" class="tmpUp">
+																	 		1
+																	 	</span>
+																	 	<span id="mainDiv" class="mainDiv">
+																	 		1
+																	 	</span>
+																	    <span id="tmpDown" class="tmpDown">
+																	 		1
+																	 	</span>
+																	 </div>
+																	   <div class="increment crFix"  onclick="cartCalc.increment(this);">
+																     <img  src="img/plus.png" width="25px" height="25px" /></div>
+															 	</div>
+															 	<span class="p-isStock">缺货</span>
+															 </div>														
+																												
+														</div>
+														<div class="cell p-action">删除</div>
+													</div>
+										    	</div>
+										    	
+										    	
+										    	
+										    	
+										    	
+												<div class="item-last item-item item-selected  ">
+													<div class="item-form">
+														<div class="cell p-checkbox">
+															<input type="checkbox" checked="checked" id="toggle-checkboxes_up" name="toggle-checkboxes" class="jdcheckbox" >
+														</div>
+														<div class="cell p-goods">
+															<div class=" cell p-img">
+																<img  src="//img10.360buyimg.com/cms/s80x80_jfs/t3877/80/1870019531/354511/c12f6e15/589d27cdN2dde2c55.jpg"  />
+															</div>
+															<div class="cell p-name"><a>纤麦大码女装夏新款胖mm时尚淑女图案短
+															 4XL宝蓝色预售6.21发货</a></div>
+														</div>
+														<div class="cell p-price">
+															<strong>¥129.00</strong>
+														</div>
+														<div class="cell p-quantity">11</div>
+														<div class="cell p-sum">
+															
+															 <div class="cart_main">
+															 	<div class="submain">
+																 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
+																	 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
+																 	 </div>
+																	 <div class="shuliang" id="shuliang" >
+																	 	<span id="tmpUp" class="tmpUp">
+																	 		1
+																	 	</span>
+																	 	<span id="mainDiv" class="mainDiv">
+																	 		1
+																	 	</span>
+																	    <span id="tmpDown" class="tmpDown">
+																	 		1
+																	 	</span>
+																	 </div>
+																	   <div class="increment crFix"  onclick="cartCalc.increment(this);">
+																     <img  src="img/plus.png" width="25px" height="25px" /></div>
+															 	</div>
+															 	<span class="p-isStock">缺货</span>
+															 </div>														
+																												
+														</div>
+														<div class="cell p-action">删除</div>
+													</div>
+										    	</div>
+										    	
+										    	
 											
 											
 										</div>
@@ -313,7 +540,8 @@
 							
 							
 							
-							<style>
+							<style>	
+							
 									.cart-floatbar{ height: 53px;line-height:53px;padding:10px 3px;}
 									.cart-floatbar .item-checkbox{width:70px;margin-left:10px;}
 									.cart-floatbar .cellSp{float:left;margin-left:30px}
@@ -331,6 +559,8 @@
 										    -webkit-transition: all .2s ease-in 0s;
 										    transition: all .2s ease-in 0s;
 										    cursor:pointer;
+										    z-index:10000;
+										    position:relative;
 									}
 									.amount-sum b:hover{transform:scale(2);transition:all 0.4s ease;}
 									.amount-sum a{cursor:pointer;text-decoration:none;color:#111;font-weight:bold;}
@@ -350,15 +580,82 @@
 										display:block;
 									}
 									
+									/* start  弹出 所选择 商品的 阴影层 */
 									.cart-footer{position:relative;}
 									.cart-footer .selectedProductDiv{
 										position: absolute;
-									    top: -100px;
-									    left: 0px;
+									   /*  top: -109px;
+									    left: 0px; */
+									    bottom:84px;
+									    left:0px;
 									    width: 990px;
-									    height: 100px;
-									    background:rgba(102,102,102,.65);
+									    height: 0px;
+									   /*  background:rgba(102,102,102,.65); */
+									    background: rgba(0,0,0,.56);
+									    overflow: hidden;
 									}
+									
+									.cart-footer .selectedProductDiv .selectedProductSum{
+										color: #eee;
+									    margin-left: 33px;
+									    font-weight: bold;
+									    position: relative;
+									    text-shadow: 1px 1px 1px #111;
+									    margin-top: 3px;
+									}
+									
+									.cart-footer .selectedProductDiv  .p_ullist{width:937px;overflow:hidden;border: 1px solid red;margin: 1px auto;}
+									.cart-footer .selectedProductDiv  .p_ullist  ul{height:100px;width: 2000%; position: relative;}
+									.cart-footer .selectedProductDiv  .p_ullist  ul li{
+										list-style:none;float:left;
+									    width:86px;height:83px;
+									    text-align: center;
+ 									    line-height: 77px;
+ 									    cursor:pointer;
+ 									    margin-left:13px;
+ 									}
+ 									
+ 									.selectedProductDiv  .selected-inner{position:relative;}
+ 									.selectedProductDiv  .selected-inner .prev{
+ 										    position: absolute;
+										    display: block;
+										    width: 15px;
+										    height: 23px;
+										    top: 45%;
+										    margin-top: -11px;
+										    margin-left: 9px;
+										    background: url(//misc.360buyimg.com/user/cart/css/i/cart-icons-2017.png) 0 -114px no-repeat;
+										    overflow:hidden;
+ 									}
+ 									.selectedProductDiv .selected-inner .next{
+	 										position: absolute;
+										    display: block;
+										    width: 15px;
+										    height: 23px;
+										    top: 50%;
+										    right:2%;
+										    margin-top: -11px;
+										    background: url(//misc.360buyimg.com/user/cart/css/i/cart-icons-2017.png) -15px -114px no-repeat;
+										    overflow: hidden;
+ 									}
+ 									
+									/*   弹出 所选择 商品的 阴影层  end */
+									
+									
+									.cartFooterShow{animation:cartFooterShow 0.7s ease forwards;}
+									.cartFooterHidden{animation:cartFooterHidden 0.6s ease  forwards;}
+									
+									
+									@keyframes cartFooterShow{
+										from{height:0px;}
+										to{height:110px;}
+									}
+									@keyframes cartFooterHidden{
+										from{height:110px;}
+										to{height:0px;}
+									}
+									
+									
 							</style>
 							
 							
@@ -377,7 +674,9 @@
 											<b class="up" id="selproductBtn"></b>
 										</div>
 										<div class="price-sum cellSp">
-											总价: <span> $30010.00 元 </span>
+											总价: 
+											<span style="font-size:16px;">¥</span>
+											<span id="totlePrice"> 30010.00 元 </span>
 										</div>
 										<div class="btn-area">
 											<a href="#">
@@ -385,20 +684,87 @@
 											</a>
 										</div>
 								</div>
-								<div class="selectedProductDiv" id="selectedProductDiv"></div>
+								<div class="selectedProductDiv" id="selectedProductDiv">
+										<div class="selected-inner">
+											<a href="javascript:void(0);" id="prev" class="prev"></a>
+											<a href="javascript:void(0);" id="next" class="next"></a>
+											<div class="selectedProductSum">
+												普通商品<span style="color:red;">11</span>件
+											</div>
+											<div class="p_ullist">
+												<ul>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t5140/285/114714888/442853/32af7382/58f8a5eaN885ff3a1.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t5140/285/114714888/442853/32af7382/58f8a5eaN885ff3a1.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t5140/285/114714888/442853/32af7382/58f8a5eaN885ff3a1.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t5140/285/114714888/442853/32af7382/58f8a5eaN885ff3a1.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+													<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+													height="74px"/></li>
+												</ul>
+											</div>
+										</div>
+								</div>
 								
 							</div>
 							
 						
 						
-						
 					</div>
 				</div>
-				
 			
 			</div>
 			
 			<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+			<script src="js/widget/cart_calculator.js" type="text/javascript" charset="utf-8"></script>
 			<script>
 				$(function(){
 					$(".cart-thead").addClass("animated fadeInDownBig");
@@ -406,9 +772,24 @@
 					
 					
 					$("#selproductBtn").click(function(){
-						
-						
+						var bg_positionY =  $(".amount-sum b").css("background-position-y")
+						if('-91px' == bg_positionY){
+							$("#selectedProductDiv").addClass("cartFooterShow").removeClass("cartFooterHidden");
+							$(".amount-sum b").css("background-position-y","-95px");
+						}else{
+							$("#selectedProductDiv").addClass("cartFooterHidden").removeClass("cartFooterShow");
+							$(".amount-sum b").css("background-position-y","-91px");
+						}
 					});
+					
+					var i = 0;
+					$("#next").click(function(){
+						i++;
+						$(".p_ullist").find("ul").animate({left:"-"+(907*i)+"px"},1000,function(){}
+ 						);
+					});
+					
+					
 					
 				});
 			</script>
