@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@include file="/commons/taglib.jsp" %>   
+<%@include file="/commons/public.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -156,7 +158,7 @@
 			 <%@include file="/commons/top_menu_product.jsp" %>  
 			</div>
 			
-			
+			<!-- container 开始 -->
 			<div class="container">
 				<div class="w">
 					<div id="chunjie" class="mb10"></div>
@@ -166,571 +168,1063 @@
 						<a class="btn-1 ml10" href="#none" style="text-decoration:none;">立即登录</a>
 					</div>
 				</div>
-				<div class="cart-warp">
-					<div class="w"></div>
-					<div class="cart">
+				
+				<!--  cart-warp  开始 -->
+					<div class="cart-warp">
+						<div class="w"></div>
 						
-							<div class="cart-thead">
-								<div class="column t-checkbox">
-									<div class="cart-checkbox">
-										<input type="checkbox" checked="checked" id="toggle-checkboxes_up" name="toggle-checkboxes" class="jdcheckbox" >
-										<label class="checked" for="">勾选全部商品</label>
+						<!--  cart  开始 -->
+						<div class="cart">
+							
+								<div class="cart-thead">
+									<div class="column t-checkbox">
+										<div class="cart-checkbox">
+											<input type="checkbox" checked="checked" id="toggle-checkboxes_up" name="toggle-checkboxes" class="jdcheckbox" >
+											<label class="checked" for="">勾选全部商品</label>
+										</div>
+										全选
 									</div>
-									全选
+									<div class="column t-goods">商品</div>
+									<div class="column t-price">单价</div>
+									<div class="column t-quantity">数量</div>
+									<div class="column t-sum">小计</div>
+									<div class="column t-action">操作</div>
 								</div>
-								<div class="column t-goods">商品</div>
-								<div class="column t-price">单价</div>
-								<div class="column t-quantity">数量</div>
-								<div class="column t-sum">小计</div>
-								<div class="column t-action">操作</div>
-							</div>
-							
-							
-							
-							<style>
-							
-								.item-full{}
-								.f-price{
-										float: left;
-									    min-width: 100px;
-									    text-align: right;
-									    font-family: verdana;
-									    line-height: 13px;
-									    color: #333;
-								}
-								.item-selected{background:#fff4e8;}
-								.cart-tbody .item-item{
+								
+								
+								
+								<style>
+								
+									.item-full{}
+									.f-price{
+											float: left;
+										    min-width: 100px;
+										    text-align: right;
+										    font-family: verdana;
+										    line-height: 13px;
+										    color: #333;
+									}
+									.item-selected{background:#fff4e8;}
+									.cart-tbody .item-item{
+											    position: relative;
+											    padding: 0 10px 1px 10px;
+											    border-top: 1px solid #c5c5c5;
+											    line-height: 20px;
+											    _height: 116px;
+											    height:120px;
+											    background: linear-gradient(to left,#fff,pink 30%,pink 70%,#fff 100%);
+											    box-shadow: 5px 6px 1em #111;
+											    margin-bottom: 10px;
+									}
+									.item-full .item-form{border-top: 1px solid #f1f1f1;cursor:pointer;}
+									
+									.cart-tbody .cell{
+										 float: left;
+		   								 padding: 8px 0 8px;
+		   								
+		   								 
+									}
+									
+									.cart-item-list .item-form .p-checkbox{height: 100px;
+									    line-height: 100px;
+									    padding-top: 7px;
+									    width: 33px;
+								     }
+									.cart-item-list .item-form .p-goods{ width: 345px;}
+									.cart-item-list .item-form .p-price{ width: 120px; padding-right: 40px;text-align: right;line-height: 80px; }
+									.cart-item-list .item-form .p-quantity{ width: 85px;text-align: center; line-height:80px;line-height: 80px;  }
+									.cart-item-list .item-form .p-sum{width: 168px;  padding-right: 40px;text-align: center;line-height: 80px; }
+									.cart-item-list .item-form .p-action{ width: 133px; line-height: 7px;margin-top:10px;}
+									.cart-item-list .item-form .cart_main .p-isStock{ position: relative ; top: -28px;}
+									  
+									
+									.p-img{width:100px;height:100px;overflow:hidden;}
+									.p-img img{width:87px;height:87px;border-radius:50%;}
+									.p-name{width:200px;height:100px;margin-left: 10px;overflow:hidden;}
+									.p-name a{color:#555;font-family:"楷体";
+								     text-shadow:0px 1px 1px #111;font-size:16px;text-decoration:none;}
+								
+								</style>
+								<div class="cart-item-list">
+									<div class="cart-tbody">
+										<div class="item-list">
+											<div class="item-full">
+											
+											<!-- .item-item start -->
+											
+												<div class="item-last item-item item-selected  ">
+														<div class="item-form">
+															<div class="cell p-checkbox">
+																<input type="checkbox" checked="checked" id="toggle-checkboxes_up" name="toggle-checkboxes" class="jdcheckbox" >
+															</div>
+															<div class="cell p-goods">
+																<div class=" cell p-img">
+																	<img  src="//img10.360buyimg.com/cms/s80x80_jfs/t6520/245/556815199/230756/eee5b958/594157b0Ne067cd85.jpg"  />
+																</div>
+																<div class="cell p-name"><a>纤麦大码女装夏新款胖mm时尚淑女图案短
+																 4XL宝蓝色预售6.21发货</a></div>
+															</div>
+															<div class="cell p-price">
+																<strong>¥129.00</strong>
+															</div>
+															<div class="cell p-quantity">11</div>
+															<div class="cell p-sum">
+																
+																 <div class="cart_main">
+																 	<div class="submain">
+																	 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
+																		 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
+																	 	 </div>
+																		 <div class="shuliang" id="shuliang" >
+																		 	<span id="tmpUp" class="tmpUp">
+																		 		1
+																		 	</span>
+																		 	<span id="mainDiv" class="mainDiv">
+																		 		1
+																		 	</span>
+																		    <span id="tmpDown" class="tmpDown">
+																		 		1
+																		 	</span>
+																		 </div>
+																		   <div class="increment crFix"  onclick="cartCalc.increment(this);">
+																	     <img  src="img/plus.png" width="25px" height="25px" /></div>
+																 	</div>
+																 	<span class="p-isStock">有货</span>
+																 </div>
+																													
+															</div>
+															<div class="cell p-action">删除</div>
+															<div class="cell p-action">移到我的关注</div>
+															<div class="cell p-action">加到我的关注</div>
+														</div>
+														
+														
+												</div>
+												
+												
+												<div class="item-last item-item item-selected  ">
+														<div class="item-form">
+															<div class="cell p-checkbox">
+																<input type="checkbox" checked="checked" id="toggle-checkboxes_up" name="toggle-checkboxes" class="jdcheckbox" >
+															</div>
+															<div class="cell p-goods">
+																<div class=" cell p-img">
+																	<img  src="//img10.360buyimg.com/cms/s80x80_jfs/t5140/285/114714888/442853/32af7382/58f8a5eaN885ff3a1.jpg"  />
+																</div>
+																<div class="cell p-name"><a>纤麦大码女装夏新款胖mm时尚淑女图案短
+																 4XL宝蓝色预售6.21发货</a></div>
+															</div>
+															<div class="cell p-price">
+																<strong>¥129.00</strong>
+															</div>
+															<div class="cell p-quantity">11</div>
+															<div class="cell p-sum">
+																
+																 <div class="cart_main">
+																 	<div class="submain">
+																	 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
+																		 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
+																	 	 </div>
+																		 <div class="shuliang" id="shuliang" >
+																		 	<span id="tmpUp" class="tmpUp">
+																		 		1
+																		 	</span>
+																		 	<span id="mainDiv" class="mainDiv">
+																		 		1
+																		 	</span>
+																		    <span id="tmpDown" class="tmpDown">
+																		 		1
+																		 	</span>
+																		 </div>
+																		   <div class="increment crFix"  onclick="cartCalc.increment(this);">
+																	     <img  src="img/plus.png" width="25px" height="25px" /></div>
+																 	</div>
+																 	<span class="p-isStock">有货</span>
+																 </div>	
+																													
+															</div>
+															<div class="cell p-action">删除</div>
+															<div class="cell p-action">移到我的关注</div>
+															<div class="cell p-action">加到我的关注</div>
+														</div>
+												</div>
+												
+												
+												
+													<div class="item-last item-item item-selected  ">
+														<div class="item-form">
+															<div class="cell p-checkbox">
+																<input type="checkbox" checked="checked" id="toggle-checkboxes_up" name="toggle-checkboxes" class="jdcheckbox" >
+															</div>
+															<div class="cell p-goods">
+																<div class=" cell p-img">
+																	<img  src="//img10.360buyimg.com/cms/s80x80_jfs/t3877/80/1870019531/354511/c12f6e15/589d27cdN2dde2c55.jpg"  />
+																</div>
+																<div class="cell p-name"><a>纤麦大码女装夏新款胖mm时尚淑女图案短
+																 4XL宝蓝色预售6.21发货</a></div>
+															</div>
+															<div class="cell p-price">
+																<strong>¥129.00</strong>
+															</div>
+															<div class="cell p-quantity">11</div>
+															<div class="cell p-sum">
+																
+																 <div class="cart_main">
+																 	<div class="submain">
+																	 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
+																		 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
+																	 	 </div>
+																		 <div class="shuliang" id="shuliang" >
+																		 	<span id="tmpUp" class="tmpUp">
+																		 		1
+																		 	</span>
+																		 	<span id="mainDiv" class="mainDiv">
+																		 		1
+																		 	</span>
+																		    <span id="tmpDown" class="tmpDown">
+																		 		1
+																		 	</span>
+																		 </div>
+																		   <div class="increment crFix"  onclick="cartCalc.increment(this);">
+																	     <img  src="img/plus.png" width="25px" height="25px" /></div>
+																 	</div>
+																 	<span class="p-isStock">缺货</span>
+																 </div>														
+																													
+															</div>
+															<div class="cell p-action">删除</div>
+															<div class="cell p-action">移到我的关注</div>
+															<div class="cell p-action">加到我的关注</div>
+														</div>
+											    	</div>
+											    	
+											    	
+											    	
+											    	
+											    	
+													<div class="item-last item-item item-selected  ">
+														<div class="item-form">
+															<div class="cell p-checkbox">
+																<input type="checkbox" checked="checked" id="toggle-checkboxes_up" name="toggle-checkboxes" class="jdcheckbox" >
+															</div>
+															<div class="cell p-goods">
+																<div class=" cell p-img">
+																	<img  src="//img11.360buyimg.com/n5/s50x64_jfs/t5989/329/1001743310/112899/50ec4245/592e33d7N3a3bd2ec.jpg!cc_50x64.jpg"  />
+																</div>
+																<div class="cell p-name"><a>纤麦大码女装夏新款胖mm时尚淑女图案短
+																 4XL宝蓝色预售6.21发货</a></div>
+															</div>
+															<div class="cell p-price">
+																<strong>¥129.00</strong>
+															</div>
+															<div class="cell p-quantity">11</div>
+															<div class="cell p-sum">
+																
+																 <div class="cart_main">
+																 	<div class="submain">
+																	 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
+																		 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
+																	 	 </div>
+																		 <div class="shuliang" id="shuliang" >
+																		 	<span id="tmpUp" class="tmpUp">
+																		 		1
+																		 	</span>
+																		 	<span id="mainDiv" class="mainDiv">
+																		 		1
+																		 	</span>
+																		    <span id="tmpDown" class="tmpDown">
+																		 		1
+																		 	</span>
+																		 </div>
+																		   <div class="increment crFix"  onclick="cartCalc.increment(this);">
+																	     <img  src="img/plus.png" width="25px" height="25px" /></div>
+																 	</div>
+																 	<span class="p-isStock">缺货</span>
+																 </div>														
+																													
+															</div>
+															<div class="cell p-action">删除</div>
+															<div class="cell p-action">移到我的关注</div>
+															<div class="cell p-action">加到我的关注</div>
+														</div>
+											    	</div>
+											    	
+												<!-- .item-item end -->
+												
+												
+												
+											</div>
+										</div>			
+									</div>
+								</div>
+								
+								
+								
+								<style>	
+								
+										.cart-floatbar{ height: 53px;line-height:53px;padding:10px 3px;}
+										.cart-floatbar .item-checkbox{width:70px;margin-left:10px;}
+										.cart-floatbar .cellSp{float:left;margin-left:30px}
+										.cart-floatbar .footerOperation a{cursor:pointer;text-decoration:none;margin-left:10px;}
+										.cart-floatbar .footerOperation a:hover{color:#e4393c;transform:scale(1.2);transition:all 0.5s ease;}
+										.amount-sum{width:277px;height:53px;line-height:53px; text-align: center;}
+										.amount-sum b{
+												display: inline-block;
+											    width: 11px;
+											    height: 5px;
+											    background: url(//misc.360buyimg.com/user/cart/css/i/cart-icons-2017.png) -45px -91px;
+											    overflow: hidden;
+											    vertical-align: middle;
+											    margin: -5px 0 0 5px;
+											    -webkit-transition: all .2s ease-in 0s;
+											    transition: all .2s ease-in 0s;
+											    cursor:pointer;
+											    z-index:10000;
+											    position:relative;
+										}
+										.amount-sum b:hover{transform:scale(2);transition:all 0.4s ease;}
+										.amount-sum a{cursor:pointer;text-decoration:none;color:#111;font-weight:bold;}
+										.amount-sum a span{font-size:16px;color:red;font-weight:bold;}
+										.price-sum{width:199px;height:53px;line-height:53px; text-align: center;}
+										.price-sum span{color:red;font-weight:bold;font-size:20px;}
+										.btn-area{width:96px;height:52px;float:right; margin-right: 10px;}
+										.btn-area  a{position:relative;cursor:pointer;}
+										.btn-area a b{
+											position:absolute;
+											width: 96px;
+										    height: 52px;
+										    top: 0;
+										    left: 0;
+										    overflow: hidden;
+										    background: url(//misc.360buyimg.com/user/cart/css/i/cart-submit-btn.png) 0 0 no-repeat;
+											display:block;
+										}
+										
+										/* start  弹出 所选择 商品的 阴影层 */
+										.cart-footer{position:relative;box-shadow: 5px 5px 11px #777; margin-top: 5px;}
+										.cart-footer .selectedProductDiv{
+											position: absolute;
+										   /*  top: -109px;
+										    left: 0px; */
+										    bottom:84px;
+										    left:0px;
+										    width: 990px;
+										    height: 0px;
+										   /*  background:rgba(102,102,102,.65); */
+										    background: rgba(0,0,0,.56);
+										    overflow: hidden;
+										}
+										
+										.cart-footer .selectedProductDiv .selectedProductSum{
+											color: #eee;
+										    margin-left: 33px;
+										    font-weight: bold;
 										    position: relative;
-										    padding: 0 10px 1px 10px;
-										    border-top: 1px solid #c5c5c5;
-										    line-height: 20px;
-										    _height: 116px;
-										    height:120px;
-										    background: linear-gradient(to left,#fff,pink 30%,pink 70%,#fff 100%);
-										    box-shadow: 5px 6px 1em #111;
-										    margin-bottom: 10px;
-								}
-								.item-full .item-form{border-top: 1px solid #f1f1f1;cursor:pointer;}
-								
-								.cart-tbody .cell{
-									 float: left;
-	   								 padding: 8px 0 8px;
-	   								
-	   								 
-								}
-								
-								.cart-item-list .item-form .p-checkbox{height: 100px;
-								    line-height: 100px;
-								    padding-top: 7px;
-								    width: 33px;
-							     }
-								.cart-item-list .item-form .p-goods{ width: 345px;}
-								.cart-item-list .item-form .p-price{ width: 120px; padding-right: 40px;text-align: right;line-height: 80px; }
-								.cart-item-list .item-form .p-quantity{ width: 85px;text-align: center; line-height:80px;line-height: 80px;  }
-								.cart-item-list .item-form .p-sum{width: 168px;  padding-right: 40px;text-align: center;line-height: 80px; }
-								.cart-item-list .item-form .p-action{ width: 133px; line-height: 7px;margin-top:10px;}
-								.cart-item-list .item-form .cart_main .p-isStock{ position: relative ; top: -28px;}
-								  
-								
-								.p-img{width:100px;height:100px;overflow:hidden;}
-								.p-img img{width:87px;height:87px;border-radius:50%;}
-								.p-name{width:200px;height:100px;margin-left: 10px;overflow:hidden;}
-								.p-name a{color:#555;font-family:"楷体";
-							     text-shadow:0px 1px 1px #111;font-size:16px;text-decoration:none;}
-							
-							</style>
-							<div class="cart-item-list">
-								<div class="cart-tbody">
-									<div class="item-list">
-										<div class="item-full">
+										    text-shadow: 1px 1px 1px #111;
+										    margin-top: 3px;
+										}
 										
-										<!-- .item-item start -->
+										.cart-footer .selectedProductDiv  .p_ullist{width:990px;overflow:hidden;margin: 1px auto;}
+										.cart-footer .selectedProductDiv  .p_ullist  ul{height:72px;width: 2000%; position: relative;}
 										
-											<div class="item-last item-item item-selected  ">
-													<div class="item-form">
-														<div class="cell p-checkbox">
-															<input type="checkbox" checked="checked" id="toggle-checkboxes_up" name="toggle-checkboxes" class="jdcheckbox" >
-														</div>
-														<div class="cell p-goods">
-															<div class=" cell p-img">
-																<img  src="//img10.360buyimg.com/cms/s80x80_jfs/t6520/245/556815199/230756/eee5b958/594157b0Ne067cd85.jpg"  />
-															</div>
-															<div class="cell p-name"><a>纤麦大码女装夏新款胖mm时尚淑女图案短
-															 4XL宝蓝色预售6.21发货</a></div>
-														</div>
-														<div class="cell p-price">
-															<strong>¥129.00</strong>
-														</div>
-														<div class="cell p-quantity">11</div>
-														<div class="cell p-sum">
-															
-															 <div class="cart_main">
-															 	<div class="submain">
-																 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
-																	 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
-																 	 </div>
-																	 <div class="shuliang" id="shuliang" >
-																	 	<span id="tmpUp" class="tmpUp">
-																	 		1
-																	 	</span>
-																	 	<span id="mainDiv" class="mainDiv">
-																	 		1
-																	 	</span>
-																	    <span id="tmpDown" class="tmpDown">
-																	 		1
-																	 	</span>
-																	 </div>
-																	   <div class="increment crFix"  onclick="cartCalc.increment(this);">
-																     <img  src="img/plus.png" width="25px" height="25px" /></div>
-															 	</div>
-															 	<span class="p-isStock">有货</span>
-															 </div>
-																												
-														</div>
-														<div class="cell p-action">删除</div>
-														<div class="cell p-action">移到我的关注</div>
-														<div class="cell p-action">加到我的关注</div>
-													</div>
-													
-													
+										.cart-footer .selectedProductDiv  .p_ullist  ul div{position:absolute;width:990px;height:100%;padding:3px;}
+										.cart-footer .selectedProductDiv  .p_ullist  ul div li{float:left; text-align: center;line-height: 72px;
+										list-style:none; margin-left:21px;cursor:pointer;}
+										
+	 									
+	 								 	.selectedProductDiv  .selected-inner{position:relative;}
+	 									.selectedProductDiv  .selected-inner .prev{
+	 										    position: absolute;
+											    display: block;
+											    width: 15px;
+											    height: 23px;
+											    top: 55%;
+											    margin-top: -11px;
+											    margin-left: 9px;
+											    background: url(//misc.360buyimg.com/user/cart/css/i/cart-icons-2017.png) 0 -114px no-repeat;
+											    overflow:hidden;
+											    z-index:9;
+	 									}
+	 									.selectedProductDiv .selected-inner .next{
+		 										position: absolute;
+											    display: block;
+											    width: 15px;
+											    height: 23px;
+											    top: 55%;
+											    right:2%;
+											    margin-top: -11px;
+											    background: url(//misc.360buyimg.com/user/cart/css/i/cart-icons-2017.png) -15px -114px no-repeat;
+											    overflow: hidden;
+											    z-index:9;
+	 									} 
+	 									
+										/*   弹出 所选择 商品的 阴影层  end */
+										
+										
+										.cartFooterShow{animation:cartFooterShow 0.7s ease forwards;}
+										.cartFooterHidden{animation:cartFooterHidden 0.6s ease  forwards;}
+										
+										
+										@keyframes cartFooterShow{
+											from{height:0px;}
+											to{height:110px;}
+										}
+										@keyframes cartFooterHidden{
+											from{height:110px;}
+											to{height:0px;}
+										}
+										
+										
+								</style>
+								
+								
+								<div class="cart-footer">
+									<div class="cart-floatbar">
+											<div class="item-checkbox cellSp" style="margin-left: 6px;">
+													<input type="checkbox" checked="checked" id="" name="" class="jdcheckbox" >
+													<span>全选</span>
+											</div>					
+											<div class="footerOperation cellSp">
+												<a>删除选中的商品</a>
+												<a>移动到我的关注</a>
+											</div>	
+											<div class="amount-sum cellSp">
+												<a>已选择 <span>12</span> &nbsp;件商品</a>
+												<b class="up" id="selproductBtn"></b>
 											</div>
-											
-											
-											<div class="item-last item-item item-selected  ">
-													<div class="item-form">
-														<div class="cell p-checkbox">
-															<input type="checkbox" checked="checked" id="toggle-checkboxes_up" name="toggle-checkboxes" class="jdcheckbox" >
-														</div>
-														<div class="cell p-goods">
-															<div class=" cell p-img">
-																<img  src="//img10.360buyimg.com/cms/s80x80_jfs/t5140/285/114714888/442853/32af7382/58f8a5eaN885ff3a1.jpg"  />
-															</div>
-															<div class="cell p-name"><a>纤麦大码女装夏新款胖mm时尚淑女图案短
-															 4XL宝蓝色预售6.21发货</a></div>
-														</div>
-														<div class="cell p-price">
-															<strong>¥129.00</strong>
-														</div>
-														<div class="cell p-quantity">11</div>
-														<div class="cell p-sum">
-															
-															 <div class="cart_main">
-															 	<div class="submain">
-																 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
-																	 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
-																 	 </div>
-																	 <div class="shuliang" id="shuliang" >
-																	 	<span id="tmpUp" class="tmpUp">
-																	 		1
-																	 	</span>
-																	 	<span id="mainDiv" class="mainDiv">
-																	 		1
-																	 	</span>
-																	    <span id="tmpDown" class="tmpDown">
-																	 		1
-																	 	</span>
-																	 </div>
-																	   <div class="increment crFix"  onclick="cartCalc.increment(this);">
-																     <img  src="img/plus.png" width="25px" height="25px" /></div>
-															 	</div>
-															 	<span class="p-isStock">有货</span>
-															 </div>	
-																												
-														</div>
-														<div class="cell p-action">删除</div>
-														<div class="cell p-action">移到我的关注</div>
-														<div class="cell p-action">加到我的关注</div>
-													</div>
+											<div class="price-sum cellSp">
+												总价: 
+												<span style="font-size:16px;">¥</span>
+												<span id="totlePrice"> 30010.00 元 </span>
 											</div>
-											
-											
-											
-												<div class="item-last item-item item-selected  ">
-													<div class="item-form">
-														<div class="cell p-checkbox">
-															<input type="checkbox" checked="checked" id="toggle-checkboxes_up" name="toggle-checkboxes" class="jdcheckbox" >
+											<div class="btn-area">
+												<a href="#">
+													<b></b>
+												</a>
+											</div>
+									</div>
+									<div class="selectedProductDiv" id="selectedProductDiv">
+											<div class="selected-inner">
+												<a href="javascript:void(0);" id="prev" class="prev"></a>
+												<a href="javascript:void(0);" id="next" class="next"></a>
+												<div class="selectedProductSum">
+													普通商品<span style="color:red;">11</span>件
+												</div>
+												<div class="p_ullist">
+													<ul>
+														<div style="left:0px;">
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t5140/285/114714888/442853/32af7382/58f8a5eaN885ff3a1.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t5140/285/114714888/442853/32af7382/58f8a5eaN885ff3a1.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
 														</div>
-														<div class="cell p-goods">
-															<div class=" cell p-img">
-																<img  src="//img10.360buyimg.com/cms/s80x80_jfs/t3877/80/1870019531/354511/c12f6e15/589d27cdN2dde2c55.jpg"  />
-															</div>
-															<div class="cell p-name"><a>纤麦大码女装夏新款胖mm时尚淑女图案短
-															 4XL宝蓝色预售6.21发货</a></div>
+														<div style="left:990px;">
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t5140/285/114714888/442853/32af7382/58f8a5eaN885ff3a1.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t5140/285/114714888/442853/32af7382/58f8a5eaN885ff3a1.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
 														</div>
-														<div class="cell p-price">
-															<strong>¥129.00</strong>
+														
+														<div style="left:1980px;">
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t5140/285/114714888/442853/32af7382/58f8a5eaN885ff3a1.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t5140/285/114714888/442853/32af7382/58f8a5eaN885ff3a1.jpg" width="69px" 
+															height="74px"/></li>
+															<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
+															height="74px"/></li>
 														</div>
-														<div class="cell p-quantity">11</div>
-														<div class="cell p-sum">
-															
-															 <div class="cart_main">
-															 	<div class="submain">
-																 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
-																	 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
-																 	 </div>
-																	 <div class="shuliang" id="shuliang" >
-																	 	<span id="tmpUp" class="tmpUp">
-																	 		1
-																	 	</span>
-																	 	<span id="mainDiv" class="mainDiv">
-																	 		1
-																	 	</span>
-																	    <span id="tmpDown" class="tmpDown">
-																	 		1
-																	 	</span>
-																	 </div>
-																	   <div class="increment crFix"  onclick="cartCalc.increment(this);">
-																     <img  src="img/plus.png" width="25px" height="25px" /></div>
-															 	</div>
-															 	<span class="p-isStock">缺货</span>
-															 </div>														
-																												
-														</div>
-														<div class="cell p-action">删除</div>
-														<div class="cell p-action">移到我的关注</div>
-														<div class="cell p-action">加到我的关注</div>
-													</div>
-										    	</div>
-										    	
-										    	
-										    	
-										    	
-										    	
-												<div class="item-last item-item item-selected  ">
-													<div class="item-form">
-														<div class="cell p-checkbox">
-															<input type="checkbox" checked="checked" id="toggle-checkboxes_up" name="toggle-checkboxes" class="jdcheckbox" >
-														</div>
-														<div class="cell p-goods">
-															<div class=" cell p-img">
-																<img  src="//img11.360buyimg.com/n5/s50x64_jfs/t5989/329/1001743310/112899/50ec4245/592e33d7N3a3bd2ec.jpg!cc_50x64.jpg"  />
-															</div>
-															<div class="cell p-name"><a>纤麦大码女装夏新款胖mm时尚淑女图案短
-															 4XL宝蓝色预售6.21发货</a></div>
-														</div>
-														<div class="cell p-price">
-															<strong>¥129.00</strong>
-														</div>
-														<div class="cell p-quantity">11</div>
-														<div class="cell p-sum">
-															
-															 <div class="cart_main">
-															 	<div class="submain">
-																 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
-																	 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
-																 	 </div>
-																	 <div class="shuliang" id="shuliang" >
-																	 	<span id="tmpUp" class="tmpUp">
-																	 		1
-																	 	</span>
-																	 	<span id="mainDiv" class="mainDiv">
-																	 		1
-																	 	</span>
-																	    <span id="tmpDown" class="tmpDown">
-																	 		1
-																	 	</span>
-																	 </div>
-																	   <div class="increment crFix"  onclick="cartCalc.increment(this);">
-																     <img  src="img/plus.png" width="25px" height="25px" /></div>
-															 	</div>
-															 	<span class="p-isStock">缺货</span>
-															 </div>														
-																												
-														</div>
-														<div class="cell p-action">删除</div>
-														<div class="cell p-action">移到我的关注</div>
-														<div class="cell p-action">加到我的关注</div>
-													</div>
-										    	</div>
-										    	
-											<!-- .item-item end -->
-											
-											
-											
-										</div>
-									</div>			
+													</ul>
+												</div>
+											</div>
+									</div>
+									
 								</div>
-							</div>
+								
 							
 							
 							
-							<style>	
-							
-									.cart-floatbar{ height: 53px;line-height:53px;padding:10px 3px;}
-									.cart-floatbar .item-checkbox{width:70px;margin-left:10px;}
-									.cart-floatbar .cellSp{float:left;margin-left:30px}
-									.cart-floatbar .footerOperation a{cursor:pointer;text-decoration:none;margin-left:10px;}
-									.cart-floatbar .footerOperation a:hover{color:#e4393c;transform:scale(1.2);transition:all 0.5s ease;}
-									.amount-sum{width:277px;height:53px;line-height:53px; text-align: center;}
-									.amount-sum b{
-											display: inline-block;
-										    width: 11px;
-										    height: 5px;
-										    background: url(//misc.360buyimg.com/user/cart/css/i/cart-icons-2017.png) -45px -91px;
-										    overflow: hidden;
-										    vertical-align: middle;
-										    margin: -5px 0 0 5px;
-										    -webkit-transition: all .2s ease-in 0s;
-										    transition: all .2s ease-in 0s;
-										    cursor:pointer;
-										    z-index:10000;
-										    position:relative;
+								<!-- 下面是 额外内容 [里面装载的 是 ,猜你喜欢，最近浏览， 我的关注等~] -->
+								<!--   extra start  -->
+								
+								<style>
+								
+									/*  extra tab 样式 */
+									.extra{width:990px;height:36px;margin:10px auto;
+										line-height:36px;padding:5px;cursor:pointer;
+										padding-bottom: 0px;
 									}
-									.amount-sum b:hover{transform:scale(2);transition:all 0.4s ease;}
-									.amount-sum a{cursor:pointer;text-decoration:none;color:#111;font-weight:bold;}
-									.amount-sum a span{font-size:16px;color:red;font-weight:bold;}
-									.price-sum{width:199px;height:53px;line-height:53px; text-align: center;}
-									.price-sum span{color:red;font-weight:bold;font-size:20px;}
-									.btn-area{width:96px;height:52px;float:right; margin-right: 10px;}
-									.btn-area  a{position:relative;cursor:pointer;}
-									.btn-area a b{
-										position:absolute;
-										width: 96px;
-									    height: 52px;
-									    top: 0;
-									    left: 0;
+									
+									/*   tab 中的 每个 a  样式 */
+									.extra a{
+										text-decoration:none;
+									    margin-right: 35px;
+									    padding-bottom: 3px;
+									    border-bottom: 2px solid #fff;
+									    
+								    }
+									
+									
+									/*  tab 当前样式  */
+									.extra a.item_curr{ 
+										 color: #e4393c;
+										 font-weight:500;
+										 border-bottom: 2px solid red;
+								    }
+									
+									
+									
+									
+				/****************************  extra body 样式开始 **************************************/
+									
+									
+									
+									/* 猜你喜欢 start */
+									
+									.extraContent .guesslikeContent{
+										width:100%;
+										height:326px;
+										margin-top: -3px;
+									}
+									
+									/* end  猜你喜欢  */
+									
+									
+									
+									 /* 最近浏览     start  (或上或下) */
+									  
+									 /*(最近浏览)   ----- 有 商品展示 */
+									.extraContent .recentSeeContent_hasProduct{
+										width:100%;
+										height:326px;
+										margin-top: -3px;
+										overflow:hidden;
+									}
+									
+									 /*(最近浏览 )   ----- 没有   商品展示 */
+									/* .extraContent .recentSeeContent_noProduct{
+										 width:100%;
+										 height:326px;
+										 margin-top: -3px;
+										 display: none;
+										 line-height:326px;
+										 text-align:center;
+									} */
+									
+									/* 最近浏览   end */
+									
+									
+									
+									
+									 /* 我的关注   start */
+									.extraContent .attentionContent{
+										width:100%;
+										height:326px;
+										margin-top: -3px;
+										display: none;
+										line-height:326px;
+										text-align:center;
+										overflow:hidden;
+									}
+									
+									
+									.extraContent .attentionContent .login-in{
+										color: #005ea7;
+										text-decoration:none;
+										font-size: 20px;
+									}
+									
+									/* 我的关注   end */
+									
+									
+									
+									
+									/*  额外extra div 内容 共通的样式    start  */
+									
+									 .ex_item{
+										width:24.7%;
+										height:99%;
+										float:left;
+										text-align: center;
+										border: 1px dashed #cacaca;
+										cursor:pointer;
+										border-radius: 16px;
+									}
+									
+									 .ex_item:hover{
+										border: 1px solid  #e4393c;
+										box-shadow:0px 0px 2em #e4393c;
+									}
+									
+									
+									 .ex_item .extra_img{
+										  border-radius: 23px;
+										  margin: 16px auto;
+									}
+									
+									 .ex_item .extra_name{
+										height: 61px;
 									    overflow: hidden;
-									    background: url(//misc.360buyimg.com/user/cart/css/i/cart-submit-btn.png) 0 0 no-repeat;
-										display:block;
-									}
-									
-									/* start  弹出 所选择 商品的 阴影层 */
-									.cart-footer{position:relative;}
-									.cart-footer .selectedProductDiv{
-										position: absolute;
-									   /*  top: -109px;
-									    left: 0px; */
-									    bottom:84px;
-									    left:0px;
-									    width: 990px;
-									    height: 0px;
-									   /*  background:rgba(102,102,102,.65); */
-									    background: rgba(0,0,0,.56);
-									    overflow: hidden;
-									}
-									
-									.cart-footer .selectedProductDiv .selectedProductSum{
-										color: #eee;
-									    margin-left: 33px;
-									    font-weight: bold;
-									    position: relative;
-									    text-shadow: 1px 1px 1px #111;
-									    margin-top: 3px;
-									}
-									
-									.cart-footer .selectedProductDiv  .p_ullist{width:990px;overflow:hidden;margin: 1px auto;}
-									.cart-footer .selectedProductDiv  .p_ullist  ul{height:72px;width: 2000%; position: relative;}
-									
-									.cart-footer .selectedProductDiv  .p_ullist  ul div{position:absolute;width:990px;height:100%;padding:3px;}
-									.cart-footer .selectedProductDiv  .p_ullist  ul div li{float:left; text-align: center;line-height: 72px;
-									list-style:none; margin-left:21px;cursor:pointer;}
-									
- 									
- 								 	.selectedProductDiv  .selected-inner{position:relative;}
- 									.selectedProductDiv  .selected-inner .prev{
- 										    position: absolute;
-										    display: block;
-										    width: 15px;
-										    height: 23px;
-										    top: 55%;
-										    margin-top: -11px;
-										    margin-left: 9px;
-										    background: url(//misc.360buyimg.com/user/cart/css/i/cart-icons-2017.png) 0 -114px no-repeat;
-										    overflow:hidden;
-										    z-index:9;
- 									}
- 									.selectedProductDiv .selected-inner .next{
-	 										position: absolute;
-										    display: block;
-										    width: 15px;
-										    height: 23px;
-										    top: 55%;
-										    right:2%;
-										    margin-top: -11px;
-										    background: url(//misc.360buyimg.com/user/cart/css/i/cart-icons-2017.png) -15px -114px no-repeat;
-										    overflow: hidden;
-										    z-index:9;
- 									} 
- 									
-									/*   弹出 所选择 商品的 阴影层  end */
-									
-									
-									.cartFooterShow{animation:cartFooterShow 0.7s ease forwards;}
-									.cartFooterHidden{animation:cartFooterHidden 0.6s ease  forwards;}
-									
-									
-									@keyframes cartFooterShow{
-										from{height:0px;}
-										to{height:110px;}
-									}
-									@keyframes cartFooterHidden{
-										from{height:110px;}
-										to{height:0px;}
+									    margin-top: -5px;
 									}
 									
 									
-							</style>
+									 .ex_item .extra_name span{
+										color: #666;
+	   									font-weight: bold;
+									}
+									    
+									
+									 .ex_item .extra_btn{
+										    display: inline-block;
+										    height: 28px;
+										    line-height: 28px;
+										    padding: 0 20px;
+										    border: 1px solid #999;
+										    color: #666;
+										    text-align: center;
+										    -webkit-border-radius: 3px;
+										    -moz-border-radius: 3px;
+										    border-radius: 3px;
+										    margin: 10px auto 3px;
+									}  
+									
+									
+									 .ex_item .extra_btn a{text-decoration:none;}
+									
+									 .ex_item .extra_btn b{
+									    height: 18px;
+	    								width: 18px;
+										background-image: url(//misc.360buyimg.com/user/cart/widget/cart-tabs-new/i/addtocart-icons.png);
+										background-position: 0 -57px;
+	    								display: inline-block;
+	    								background-repeat: no-repeat;
+	    								overflow: hidden;
+	    								vertical-align: middle;
+	    								margin-right: 4px;
+									}
+									
+									
+									 .ex_item .extra_btn:hover{
+									border-color: #e4393c;background: #e4393c;}
+									 .ex_item .extra_btn:hover a{color: #fff;}
+									 .ex_item .extra_btn:hover b{
+										background-position: -27px -57px;
+									}
+									
+									 .ex_item .extra_price{
+									    font-size: 16px;
+									    color: #d91f20;
+									    font-family: verdana;
+									    font-weight: 400;
+									}
+									
+									
+									/*  end  额外extra div 内容 共通的样式      */
+								
+									
+									
+									
+								</style>
+								
+								
+								<!-- end extra  -->
 							
 							
-							<div class="cart-footer">
-								<div class="cart-floatbar">
-										<div class="item-checkbox cellSp" style="margin-left: 6px;">
-												<input type="checkbox" checked="checked" id="" name="" class="jdcheckbox" >
-												<span>全选</span>
-										</div>					
-										<div class="footerOperation cellSp">
-											<a>删除选中的商品</a>
-											<a>移动到我的关注</a>
-										</div>	
-										<div class="amount-sum cellSp">
-											<a>已选择 <span>12</span> &nbsp;件商品</a>
-											<b class="up" id="selproductBtn"></b>
-										</div>
-										<div class="price-sum cellSp">
-											总价: 
-											<span style="font-size:16px;">¥</span>
-											<span id="totlePrice"> 30010.00 元 </span>
-										</div>
-										<div class="btn-area">
-											<a href="#">
-												<b></b>
-											</a>
-										</div>
+							
+							
+						    	<!-- 额外的内容体tab  start -->
+						    	
+							    <div class="extra">
+										<a class="extra-guessLike item_curr">
+											猜你喜欢
+										</a>
+										<a class="extra-recentSee">
+											最近浏览
+										</a>
+										<a class="extra-attention">
+											我的关注
+										</a>
 								</div>
-								<div class="selectedProductDiv" id="selectedProductDiv">
-										<div class="selected-inner">
-											<a href="javascript:void(0);" id="prev" class="prev"></a>
-											<a href="javascript:void(0);" id="next" class="next"></a>
-											<div class="selectedProductSum">
-												普通商品<span style="color:red;">11</span>件
+								
+								<!-- end    额外的内容体tab   -->
+								
+								
+								
+								
+								
+								<!-- 额外的内容体    start-->
+								<div class="extraContent">
+								
+										<!--  猜你喜欢  start -->
+										<div class="guesslikeContent">
+										
+										
+										<!-- 单个 start -->
+											<div class="ex_item">
+												<div class="extra_img">
+													<img src="//img11.360buyimg.com/n4/s160x160_jfs/t5953/126/983276242/123139/19a852f2/592e3399N5446452e.jpg"
+													width="160px" height="160px" />
+												</div>
+												<div class="extra_name">
+													<span>
+														艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
+													</span>
+												</div>	
+												<div class="extra_price">
+													<strong><em>￥</em><i>69.00</i></strong>
+												</div>
+												<div class="extra_btn">
+													<a href="#">
+														<b></b>
+														加入购物车
+													</a>
+												</div>
 											</div>
-											<div class="p_ullist">
-												<ul>
-													<div style="left:0px;">
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t5140/285/114714888/442853/32af7382/58f8a5eaN885ff3a1.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t5140/285/114714888/442853/32af7382/58f8a5eaN885ff3a1.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-													</div>
-													<div style="left:990px;">
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t5140/285/114714888/442853/32af7382/58f8a5eaN885ff3a1.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t5140/285/114714888/442853/32af7382/58f8a5eaN885ff3a1.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-													</div>
-													
-													<div style="left:1980px;">
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t5140/285/114714888/442853/32af7382/58f8a5eaN885ff3a1.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t5140/285/114714888/442853/32af7382/58f8a5eaN885ff3a1.jpg" width="69px" 
-														height="74px"/></li>
-														<li><img src="//img10.360buyimg.com/cms/s80x80_jfs/t2701/31/2975990817/261037/e8fa0b01/577b9f85N755c7a3a.jpg" width="69px" 
-														height="74px"/></li>
-													</div>
-												</ul>
+											
+											<!-- 单个  end  -->
+											
+											
+											
+											<!-- 单个 start -->
+											<div class="ex_item">
+												<div class="extra_img">
+													<img src="//img11.360buyimg.com/n4/s160x160_jfs/t3307/32/5129177937/444580/89e6e626/5865d422Nf104cd19.jpg"
+													width="160px" height="160px" />
+												</div>
+												<div class="extra_name">
+													<span>
+														艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
+													</span>
+												</div>	
+												<div class="extra_price">
+													<strong><em>￥</em><i>69.00</i></strong>
+												</div>
+												<div class="extra_btn">
+													<a href="#">
+														<b></b>
+														加入购物车
+													</a>
+												</div>
 											</div>
+											
+											<!-- 单个  end  -->
+											
+											
+											<!-- 单个 start -->
+											<div class="ex_item">
+												<div class="extra_img">
+													<img src="//img11.360buyimg.com/n4/s160x160_jfs/t3490/310/1645784436/184882/6445dca/582ebdc4N89dd58d7.jpg"
+													width="160px" height="160px" />
+												</div>
+												<div class="extra_name">
+													<span>
+														艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
+													</span>
+												</div>	
+												<div class="extra_price">
+													<strong><em>￥</em><i>69.00</i></strong>
+												</div>
+												<div class="extra_btn">
+													<a href="#">
+														<b></b>
+														加入购物车
+													</a>
+												</div>
+											</div>
+											
+											<!-- 单个  end  -->
+											
+											
+											<!-- 单个 start -->
+											<div class="ex_item">
+												<div class="extra_img">
+													<img src="//img10.360buyimg.com/n4/s160x160_jfs/t4858/182/92485352/773279/d9ae834c/58da5d2dN85751dd8.jpg"
+													width="160px" height="160px" />
+												</div>
+												<div class="extra_name">
+													<span>
+														艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
+													</span>
+												</div>	
+												<div class="extra_price">
+													<strong><em>￥</em><i>69.00</i></strong>
+												</div>
+												<div class="extra_btn">
+													<a href="#">
+														<b></b>
+														加入购物车
+													</a>
+												</div>
+											</div>
+											
+											<!-- 单个  end  -->
+											
+											
+										</div>
+										
+										
+										
+										<!-- 最近浏览 -->
+									<!-- 	<div class="recentSeeContent_noProduct">
+											<div class="inn">暂时无结果</div>
+										</div> -->
+										<div class="recentSeeContent_hasProduct">
+												
+											<!-- 单个 start -->
+											<div class="ex_item">
+												<div class="extra_img">
+													<img src="//img10.360buyimg.com/n4/s160x160_jfs/t4858/182/92485352/773279/d9ae834c/58da5d2dN85751dd8.jpg"
+													width="160px" height="160px" />
+												</div>
+												<div class="extra_name">
+													<span>
+														艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
+													</span>
+												</div>	
+												<div class="extra_price">
+													<strong><em>￥</em><i>69.00</i></strong>
+												</div>
+												<div class="extra_btn">
+													<a href="#">
+														<b></b>
+														加入购物车
+													</a>
+												</div>
+											</div>
+											
+											<!-- 单个  end  -->
+											
+											
+											
+											<!-- 单个 start -->
+											<div class="ex_item">
+												<div class="extra_img">
+													<img src="//img11.360buyimg.com/n4/s160x160_jfs/t5617/298/860778867/208296/93231a90/592251a5N84b3adb6.jpg"
+													width="160px" height="160px" />
+												</div>
+												<div class="extra_name">
+													<span>
+														艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
+													</span>
+												</div>	
+												<div class="extra_price">
+													<strong><em>￥</em><i>69.00</i></strong>
+												</div>
+												<div class="extra_btn">
+													<a href="#">
+														<b></b>
+														加入购物车
+													</a>
+												</div>
+											</div>
+											
+											<!-- 单个  end  -->
+											
+											
+											<!-- 单个 start -->
+											<div class="ex_item">
+												<div class="extra_img">
+													<img src="//img12.360buyimg.com/n4/s160x160_jfs/t3100/199/5384147744/444276/a0a39b2e/586ca1a7Nc37b4768.jpg"
+													width="160px" height="160px" />
+												</div>
+												<div class="extra_name">
+													<span>
+														艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
+													</span>
+												</div>	
+												<div class="extra_price">
+													<strong><em>￥</em><i>69.00</i></strong>
+												</div>
+												<div class="extra_btn">
+													<a href="#">
+														<b></b>
+														加入购物车
+													</a>
+												</div>
+											</div>
+											
+											<!-- 单个  end  -->
+											
+											
+											<!-- 单个 start -->
+											<div class="ex_item">
+												<div class="extra_img">
+													<img src="//img12.360buyimg.com/n4/s160x160_jfs/t3229/127/5148887812/481736/7fbe0c73/5865e02fNd3e3c8f3.jpg"
+													width="160px" height="160px" />
+												</div>
+												<div class="extra_name">
+													<span>
+														艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
+													</span>
+												</div>	
+												<div class="extra_price">
+													<strong><em>￥</em><i>69.00</i></strong>
+												</div>
+												<div class="extra_btn">
+													<a href="#">
+														<b></b>
+														加入购物车
+													</a>
+												</div>
+											</div>
+											
+											<!-- 单个  end  -->
+												
+												
+												
+										</div>
+										
+										
+										<!-- 我的关注 -->
+										<div class="attentionContent">
+										    	<div class="inn">
+										    		<a href="javascript:void(0);" class="login-in">
+										    			登录
+										    		</a>后将显示您之前关注的商品
+										    	</div>
 										</div>
 								</div>
 								
-							</div>
+								<!-- end  额外的内容体   -->
 							
-						
-						
+							
+						</div>
+					
+						<!--  结束  cart   -->
+					
 					</div>
-				</div>
-			
+				<!-- 结束   cart-warp -->
 			</div>
+			<!-- 结束  container  -->
 			
 			
-			<style>
-			
-				.itemItemHoverCss{box-shadow:5px 6px 2em #76488e;}
-			</style>
-			
-			<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 			<script src="js/widget/cart_calculator.js" type="text/javascript" charset="utf-8"></script>
 			<script>
 				$(function(){
+					
+					/* 增加 页面进入 特效  */
 					$(".cart-thead").addClass("animated fadeInDownBig");
 					$(".item-item").addClass("animated  bounceInUp");
 					
-					$(".item-item").hover(function(){
-						$(this).addClass("itemItemHoverCss");
-					});
-				    
 					
-					$("#selproductBtn").click(function(){
-						var bg_positionY =  $(".amount-sum b").css("background-position-y")
-						if('-91px' == bg_positionY){
-							$("#selectedProductDiv").addClass("cartFooterShow").removeClass("cartFooterHidden");
-							$(".amount-sum b").css("background-position-y","-95px");
-						}else{
-							$("#selectedProductDiv").addClass("cartFooterHidden").removeClass("cartFooterShow");
-							$(".amount-sum b").css("background-position-y","-91px");
-						}
-					});
+					     /*  向上弹出购物车层  start  */
 					
-					var i = 0;
-					$("#next").click(function(){
-						i++;
-						$(".p_ullist").find("ul").animate({left:"-"+(990*i)+"px"},1000,function(){}
- 						);
-					});
+							$("#selproductBtn").click(function(){
+								var bg_positionY =  $(".amount-sum b").css("background-position-y")
+								if('-91px' == bg_positionY){
+									$("#selectedProductDiv").addClass("cartFooterShow").removeClass("cartFooterHidden");
+									$(".amount-sum b").css("background-position-y","-95px");
+								}else{
+									$("#selectedProductDiv").addClass("cartFooterHidden").removeClass("cartFooterShow");
+									$(".amount-sum b").css("background-position-y","-91px");
+								}
+							});
+							
+							
+							
+							//向上弹出 层  左 右 按钮 
+							var totleCount = 35;
+							var pageCount = parseInt(35/10);  //总共有多少页(推屏)
+							var i = 0;
+							$("#next").click(function(){
+								
+								//处理正在运动中的 元素 (必须等待正在运动中的元素 运动完毕之后才可以进行下一步的 操作)
+								if(!$(".p_ullist").find("ul").is(":animated")){
+									if(i == pageCount-1){
+										loading("已经是最后一页了!",2);
+										return;
+									} 
+									i++;
+									$(".p_ullist").find("ul").animate({left:"-"+(990*i)+"px"},1000,function(){}
+			 						);
+								}
+							});
+							
+							$("#prev").click(function(){
+								
+								if(!$(".p_ullist").find("ul").is(":animated")){
+									
+										if(i == 0){
+											loading("已经到第一页了!",2);
+											return;
+										} 
+										i--;
+										$(".p_ullist").find("ul").animate({left:"-"+(990*i)+"px"},1000,function(){}
+				 						);
+								}
+							});
 					
-					$("#prev").click(function(){
-						i--;
-						$(".p_ullist").find("ul").animate({left:"-"+(990*i)+"px"},1000,function(){}
- 						);
-					});
+					      /* end  向上弹出购物车层    */
 					
 					
 					
+					
+							/*  extra(额外内容)   start  */
+					
+							$(".extra a").hover(function(){
+								$(this).addClass("item_curr").siblings("a").removeClass("item_curr");
+								//console.log($(this).index()); //因为 这个("extra a") 选择器查询出来的 多个 <a>标签,
+								// 我们就可以进行index()去获取 每个a标签 所在的 索引
+								
+								var tab_index = $(this).index(); //下面的 content 要和 上面的 tab 的索引 值是一致的 
+								//第一种写法
+							 	$(".extraContent > div").eq(tab_index).css("display","block")
+									.siblings("div").css("display","none"); 
+								
+								
+								
+							});
+								
+					     	
+					
+							/* end   extra(额外内容)    */
+							
 				});
 			</script>
 			

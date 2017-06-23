@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+		*{margin: 0;padding:0;}
+		body{background: url("5.png")no-repeat;
+                background-size:cover;
+                background-attachment:fixed;
+                width:100%;
+                height:100%;
+                position:fixed;
+                top:0px;
+                left:0px;}
+		.ttt{width: 500px;height: 300px;border: 1px solid #666;
+			box-shadow: 1px 1px 2px #e6e6e6;border-radius: 20%;margin: 30px 20px;
+			position: relative; z-index:100;}
+		.tmui-overlay{width:100%;height:100%;background-color:#362C35;position:absolute;top:0;left:0;z-index:99;filter:alpha(opacity=30);-moz-opacity:0.3;-khtml-opacity:0.3;opacity:0.3;
+		display: none;}
+		.temp{position: absolute;top: 30px;left: 100px;}
+</style>
+<body>
+
+		
+	<!-- <div class="ttt">
+		<input type="button" name=""  value="点击居中" style="margin: 30px 20px;" onclick="ch_center_pos(this);" />
+	</div>
+	<div class="tmui-overlay"></div> -->
+
+	<input type="text" id="p1" /><br>
+	<input type="text" id="p2" /><br>
+	<a href="javascript:void(0);" onclick="generateHtml('aa',2);">生成代码</a>
+
+
+
+
+	<link rel="stylesheet" type="text/css" href="./css/sg.css">
+	<script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="sgutil.js"></script>
+	<script type="text/javascript" src="sg.js"></script>
+	<script type="text/javascript" src="tz_page.js"></script>
+	<script type="text/javascript" src="../utils/moon.js"></script>
+	<script type="text/javascript">
+
+		/*var param1 =  $("#p1").val();
+		var param2 =  $("#p2").val()
+		var param3 =  1;*/
+		var param1 = "";
+		var param2 = '' ;a
+		function generateHtml(param1,param2){
+
+			param1 = param1;
+		    param2 = param2; 
+		   // alert(param2)
+		    //alert(param1)
+			var functionName = "test";
+
+			var $div = $("<div>");
+			$div.addClass("ttt");
+			$("body").append($div);
+			var $input = $("<input>");
+			$input.attr("type","button");
+			$input.val("请点击hongzhijian");
+			$input.attr("id","keke");
+			$input.addClass("temp");
+			$input.attr("onclick",""+functionName+"("+param1+","+param2+",1);");
+			$div.append($input);
+
+
+		}
+
+
+		function test(a,b,c){
+
+			alert("a= "+a);
+			alert("b= "+b);
+			alert("c= "+c);
+
+		}
+
+
+
+	/*	function ch_center_pos(obj){
+			centerObj($(obj).parent("div"));
+			$(obj).parent().next().click(function(){
+				$(this).hide()
+			}).show("slow");
+		}
+
+		var centerObj = function(o){
+
+			var left = ($(window).width() - o.width())/2;
+			var top = ($(window).height() - o.height())/2;
+			o.css({left:left,top:top});
+		}
+
+	
+
+		$(window).resize(function(){
+			centerObj($(".ttt"));	
+		})*/
+		
+
+		// jquery 中的 深拷贝 的 实现原理
+
+ 
+		 //两种写法 来判断是否属于某种类型
+		 //instanceof Object  或者是 typeof xx === "object"
+
+		 //console.log(typeof xiaoming === "object");
+
+
+			
+/*
+		 	 function Parent(){
+		
+						this.name = "parent111";
+						this.age =  53;
+		
+						this.pm = function(){
+							console.log(this.name);
+						}
+				}
+			
+			Parent.prototype.say = function(){
+				console.log("父类的 说说");
+			}
+	
+	
+			function Child(){
+
+				//调用父类构造函数
+  				Parent.call(this);
+				this.language = "english";
+			}
+
+
+			Child.prototype = new Parent();
+			var c1 = new Child();
+			console.log(c1);
+
+			Child.prototype = Object.create(Parent.prototype);
+			var c1 = new Child();
+			console.log(c1);
+*/
+
+
+
+
+
+		
+		/*	window.onload = function(){
+
+
+			}
+
+				
+
+			(function(win){
+
+					function Person(){}
+
+					Person.prototype.eat = function(){
+						console.log("I'm eating ....");
+					}
+
+					Person.prototype.headCount = 1;
+
+					win.Person = Person
+
+
+			}(window));
+
+
+
+			(function(){
+
+					function Programmer(){
+						this.language = "java";
+					}
+
+					//=======开始继承  start
+					Programmer.prototype = Object.create(Person.prototype);
+					//console.log(Programmer.prototype.constructor); //此时Programmer因为继承了Person 所以现在的构造器是父类Person
+					//继承完成必须要对构造器进行修正，不然使用的将会是继承的父类的构造器
+					Programmer.prototype.constructor = Programmer; //即还原构造器引用
+					//=======结束继承  end
+
+
+
+					Programmer.prototype.language = "javascript";
+					Programmer.prototype.walk = function(){
+						console.log("i'm wolk in "+ this.language);
+					}
+
+					window.Programmer = Programmer;
+
+			})();
+
+
+
+
+			var p1 = new Programmer();
+			console.log(p1.eat());
+			console.log(p1.walk());*/
+
+
+
+	/*	;(function(win){
+			    var age = 18;
+				function Person(name,age){
+					var _this = {};
+
+					_this.name = name;
+					_this.age = age;
+
+					_this.callFunc = function(){
+
+						console.log(" 你好： " + _this.name);
+
+					}
+					_this.getAge = function(){
+						return _this.age*2;
+					}
+					_this.getName = function(){
+						return  "hello : " +_this.name;
+
+					}
+
+
+					return _this;
+				}
+
+			   win.module1 = Person;
+
+
+		}(window));
+		
+
+
+		(function(win){
+
+			function Teacher(pObj){
+
+				var p1  =  module1(pObj.name,pObj.age)
+				var self = {};
+				self.age = p1.getAge();
+				self.name = p1.getName();
+				self.callbackFunc =  function(){
+					console.log(self.name +" 当前的age 为 :" + self.age);
+				}
+
+				return self ;
+			}
+
+			win.module2 = Teacher;
+
+		}(window));
+
+
+		/*var p  =  module1("zyyy",28);
+		p.callFunc();
+
+		var p = {
+			name:"zy1",
+			age:15
+		}
+		
+		var p1 = module2(p);
+		p1.callbackFunc();*/
+
+	</script>
+
+
+</body>
+</html>
