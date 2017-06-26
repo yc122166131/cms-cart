@@ -693,7 +693,7 @@
 								<!--   extra start  -->
 								
 								<style>
-								
+									
 									/*  extra tab 样式 */
 									.extra{width:990px;height:36px;margin:10px auto;
 										line-height:36px;padding:5px;cursor:pointer;
@@ -724,7 +724,69 @@
 									
 									
 									
-									/* 猜你喜欢 start */
+									.extraContent{position:relative;z-index:1;}
+									
+									
+									
+									/* start 加在 每个 tab 中的 每个 group 上的  用来 控制 只显示 第一组   */
+									
+									.extraContent .tmCommonGroup:not(:first-child){
+										/* 每个tab Body不是第一组 都会隐藏  */
+											width:100%;
+											height:100%;
+											display:none;
+									
+									}
+									
+									
+									/*  end  */
+									
+									
+									/* start 额外的内容 的 左右两边的  (幽灵)按钮  */
+									.extraContent .extra-page a{
+											
+										    color: #999;
+										    text-align: center;
+										    font-size: 42px;
+										    font-weight: 400;
+										    font-family: simsun;
+										    position:absolute;
+										    top: 50%;
+										    margin-top: -60px;
+										    z-index: 3;
+										    display: block;
+										    width: 40px;
+										    height: 100px;
+										    line-height: 100px;
+										    background:rgba(0,0,0,0.2);
+										    transition:all 0.3s ease;
+										    text-decoration:none;
+									}
+									
+									.extraContent .extra-page a:hover{
+										 background: rgba(0,0,0,.6);
+										 color: #fff;
+										 transform:scale(1.1);
+										 transition:all 0.3s ease;
+										 border-radius:10px;
+									}
+									
+									
+									.extraContent .extra-page .ex-prev{
+										left:0px;
+									}
+										
+									.extraContent .extra-page .ex-next{
+										right:0px;
+									}									
+									
+									/*  额外的内容 的 左右两边的   (幽灵)按钮  end  */
+								
+									
+									
+									 
+									
+									/* start 猜你喜欢  */
 									
 									.extraContent .guesslikeContent{
 										width:100%;
@@ -732,31 +794,32 @@
 										margin-top: -3px;
 									}
 									
-									/* end  猜你喜欢  */
+									
+									/* end 猜你喜欢  */
 									
 									
 									
-									 /* 最近浏览     start  (或上或下) */
+									 /*  start  最近浏览     */
 									  
 									 /*(最近浏览)   ----- 有 商品展示 */
-									.extraContent .recentSeeContent_hasProduct{
+									.extraContent .recentSeeContent{
 										width:100%;
 										height:326px;
 										margin-top: -3px;
 										overflow:hidden;
+										display:none;
+										background:red;
 									}
 									
-									 /*(最近浏览 )   ----- 没有   商品展示 */
-									/* .extraContent .recentSeeContent_noProduct{
-										 width:100%;
-										 height:326px;
-										 margin-top: -3px;
+									 /*(最近浏览 )   ----- 没有   商品展示 (动态增加样式)*/ 
+									.extraContent .recentSeeContent_noProduct{
 										 display: none;
 										 line-height:326px;
 										 text-align:center;
-									} */
+									}
 									
 									/* 最近浏览   end */
+									
 									
 									
 									
@@ -868,8 +931,6 @@
 									/*  end  额外extra div 内容 共通的样式      */
 								
 									
-									
-									
 								</style>
 								
 								
@@ -897,244 +958,390 @@
 								
 								
 								
-								
-								<!-- 额外的内容体    start-->
+								<!-- 额外的内容DIV    start-->
 								<div class="extraContent">
 								
-										<!--  猜你喜欢  start -->
-										<div class="guesslikeContent">
+											
+													<!-- start 幽灵按钮 -->
+													
+													<div class="extra-page" style="display: block;">    
+														  <a href="javascript:void(0)" class="ex-prev">&lt;</a>       
+														  <a href="javascript:void(0)" class="ex-next">&gt;</a>   
+												    </div>
+													
+													
+													<!-- 幽灵按钮    end  -->
+													
+													
+													
+													<!-- 额外的内容(真实内容body)  start-->
+													<div class="extraContent_body">
+													
+																		
+														    	<!--  start  猜你喜欢   ====================   -->
+																<div class="guesslikeContent" data-pageCount="2" >
+																
+																    <!-- start  一组    -->
+																	<div class="guessSinglegroup tmCommonGroup">
+																	
+																			<!-- start  单个   -->
+																			<div class="ex_item">
+																				<div class="extra_img">
+																					<img src="//img11.360buyimg.com/n4/s160x160_jfs/t5953/126/983276242/123139/19a852f2/592e3399N5446452e.jpg"
+																					width="160px" height="160px" />
+																				</div>
+																				<div class="extra_name">
+																					<span>
+																						艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
+																					</span>
+																				</div>	
+																				<div class="extra_price">
+																					<strong><em>￥</em><i>69.00</i></strong>
+																				</div>
+																				<div class="extra_btn">
+																					<a href="#">
+																						<b></b>
+																						加入购物车
+																					</a>
+																				</div>
+																			</div>
+																			
+																			<!-- 单个  end  -->
+																			
+																			
+																			
+																			<!-- start 单个  -->
+																			<div class="ex_item">
+																				<div class="extra_img">
+																					<img src="//img11.360buyimg.com/n4/s160x160_jfs/t3307/32/5129177937/444580/89e6e626/5865d422Nf104cd19.jpg"
+																					width="160px" height="160px" />
+																				</div>
+																				<div class="extra_name">
+																					<span>
+																						艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
+																					</span>
+																				</div>	
+																				<div class="extra_price">
+																					<strong><em>￥</em><i>69.00</i></strong>
+																				</div>
+																				<div class="extra_btn">
+																					<a href="#">
+																						<b></b>
+																						加入购物车
+																					</a>
+																				</div>
+																			</div>
+																			
+																			<!-- 单个  end  -->
+																			
+																			
+																			<!--  start  单个  -->
+																			<div class="ex_item">
+																				<div class="extra_img">
+																					<img src="//img11.360buyimg.com/n4/s160x160_jfs/t3490/310/1645784436/184882/6445dca/582ebdc4N89dd58d7.jpg"
+																					width="160px" height="160px" />
+																				</div>
+																				<div class="extra_name">
+																					<span>
+																						艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
+																					</span>
+																				</div>	
+																				<div class="extra_price">
+																					<strong><em>￥</em><i>69.00</i></strong>
+																				</div>
+																				<div class="extra_btn">
+																					<a href="#">
+																						<b></b>
+																						加入购物车
+																					</a>
+																				</div>
+																			</div>
+																			
+																			<!-- 单个  end  -->
+																			
+																			
+																			<!-- start   单个  -->
+																			<div class="ex_item">
+																				<div class="extra_img">
+																					<img src="//img10.360buyimg.com/n4/s160x160_jfs/t4858/182/92485352/773279/d9ae834c/58da5d2dN85751dd8.jpg"
+																					width="160px" height="160px" />
+																				</div>
+																				<div class="extra_name">
+																					<span>
+																						艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
+																					</span>
+																				</div>	
+																				<div class="extra_price">
+																					<strong><em>￥</em><i>69.00</i></strong>
+																				</div>
+																				<div class="extra_btn">
+																					<a href="#">
+																						<b></b>
+																						加入购物车
+																					</a>
+																				</div>
+																			</div>
+																			
+																			<!-- 单个  end  -->
+																	</div>
+																	
+																	 <!--  一组    end  -->
+																	 
+																	 
+																	 
+																	 
+																	  <!--  start 一组      -->
+																	 
+																	 <div class="guessSinglegroup tmCommonGroup">
+																	 
+																					<!-- start  单个  -->
+																					<div class="ex_item">
+																						<div class="extra_img">
+																							<img src="//img10.360buyimg.com/n4/s160x160_jfs/t4858/182/92485352/773279/d9ae834c/58da5d2dN85751dd8.jpg"
+																							width="160px" height="160px" />
+																						</div>
+																						<div class="extra_name">
+																							<span>
+																								艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
+																							</span>
+																						</div>	
+																						<div class="extra_price">
+																							<strong><em>￥</em><i>69.00</i></strong>
+																						</div>
+																						<div class="extra_btn">
+																							<a href="#">
+																								<b></b>
+																								加入购物车
+																							</a>
+																						</div>
+																					</div>
+																					
+																					<!-- 单个  end  -->
+																					
+																					
+																					
+																					<!-- start  单个  -->
+																					<div class="ex_item">
+																						<div class="extra_img">
+																							<img src="//img11.360buyimg.com/n4/s160x160_jfs/t5617/298/860778867/208296/93231a90/592251a5N84b3adb6.jpg"
+																							width="160px" height="160px" />
+																						</div>
+																						<div class="extra_name">
+																							<span>
+																								艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
+																							</span>
+																						</div>	
+																						<div class="extra_price">
+																							<strong><em>￥</em><i>69.00</i></strong>
+																						</div>
+																						<div class="extra_btn">
+																							<a href="#">
+																								<b></b>
+																								加入购物车
+																							</a>
+																						</div>
+																					</div>
+																					
+																					<!-- 单个  end  -->
+																					
+																					
+																					<!--  start 单个  -->
+																					<div class="ex_item">
+																						<div class="extra_img">
+																							<img src="//img12.360buyimg.com/n4/s160x160_jfs/t3100/199/5384147744/444276/a0a39b2e/586ca1a7Nc37b4768.jpg"
+																							width="160px" height="160px" />
+																						</div>
+																						<div class="extra_name">
+																							<span>
+																								艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
+																							</span>
+																						</div>	
+																						<div class="extra_price">
+																							<strong><em>￥</em><i>69.00</i></strong>
+																						</div>
+																						<div class="extra_btn">
+																							<a href="#">
+																								<b></b>
+																								加入购物车
+																							</a>
+																						</div>
+																					</div>
+																					
+																					<!-- 单个  end  -->
+																					
+																					
+																					<!-- start   单个  -->
+																					<div class="ex_item">
+																						<div class="extra_img">
+																							<img src="//img12.360buyimg.com/n4/s160x160_jfs/t3229/127/5148887812/481736/7fbe0c73/5865e02fNd3e3c8f3.jpg"
+																							width="160px" height="160px" />
+																						</div>
+																						<div class="extra_name">
+																							<span>
+																								艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
+																							</span>
+																						</div>	
+																						<div class="extra_price">
+																							<strong><em>￥</em><i>69.00</i></strong>
+																						</div>
+																						<div class="extra_btn">
+																							<a href="#">
+																								<b></b>
+																								加入购物车
+																							</a>
+																						</div>
+																					</div>
+																					
+																					<!-- 单个  end  -->
+																	 
+																	 </div>
+																	 
+																	   <!--   一组  end     -->
+																	 
+																	 
+																	 
+																	 
+																	
+																	
+																</div>
+																
+																<!--  猜你喜欢  end -->
+																
+																
+																
+																<!-- ===================================================== -->
+																
+																
+																<!-- 最近浏览  start -->
+																<div class="recentSeeContent">
+																		
+																	<!-- start  单个  -->
+																<!-- 	<div class="ex_item">
+																		<div class="extra_img">
+																			<img src="//img10.360buyimg.com/n4/s160x160_jfs/t4858/182/92485352/773279/d9ae834c/58da5d2dN85751dd8.jpg"
+																			width="160px" height="160px" />
+																		</div>
+																		<div class="extra_name">
+																			<span>
+																				艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
+																			</span>
+																		</div>	
+																		<div class="extra_price">
+																			<strong><em>￥</em><i>69.00</i></strong>
+																		</div>
+																		<div class="extra_btn">
+																			<a href="#">
+																				<b></b>
+																				加入购物车
+																			</a>
+																		</div>
+																	</div> -->
+																	
+																	<!-- 单个  end  -->
+																	
+																	
+																	
+																	<!-- start  单个  -->
+																<!-- 	<div class="ex_item">
+																		<div class="extra_img">
+																			<img src="//img11.360buyimg.com/n4/s160x160_jfs/t5617/298/860778867/208296/93231a90/592251a5N84b3adb6.jpg"
+																			width="160px" height="160px" />
+																		</div>
+																		<div class="extra_name">
+																			<span>
+																				艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
+																			</span>
+																		</div>	
+																		<div class="extra_price">
+																			<strong><em>￥</em><i>69.00</i></strong>
+																		</div>
+																		<div class="extra_btn">
+																			<a href="#">
+																				<b></b>
+																				加入购物车
+																			</a>
+																		</div>
+																	</div> -->
+																	
+																	<!-- 单个  end  -->
+																	
+																	
+																	<!--  start 单个  -->
+																	<!-- <div class="ex_item">
+																		<div class="extra_img">
+																			<img src="//img12.360buyimg.com/n4/s160x160_jfs/t3100/199/5384147744/444276/a0a39b2e/586ca1a7Nc37b4768.jpg"
+																			width="160px" height="160px" />
+																		</div>
+																		<div class="extra_name">
+																			<span>
+																				艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
+																			</span>
+																		</div>	
+																		<div class="extra_price">
+																			<strong><em>￥</em><i>69.00</i></strong>
+																		</div>
+																		<div class="extra_btn">
+																			<a href="#">
+																				<b></b>
+																				加入购物车
+																			</a>
+																		</div>
+																	</div> -->
+																	
+																	<!-- 单个  end  -->
+																	
+																	
+																	<!-- start   单个  -->
+																<!-- 	<div class="ex_item">
+																		<div class="extra_img">
+																			<img src="//img12.360buyimg.com/n4/s160x160_jfs/t3229/127/5148887812/481736/7fbe0c73/5865e02fNd3e3c8f3.jpg"
+																			width="160px" height="160px" />
+																		</div>
+																		<div class="extra_name">
+																			<span>
+																				艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
+																			</span>
+																		</div>	
+																		<div class="extra_price">
+																			<strong><em>￥</em><i>69.00</i></strong>
+																		</div>
+																		<div class="extra_btn">
+																			<a href="#">
+																				<b></b>
+																				加入购物车
+																			</a>
+																		</div>
+																	</div> -->
+																	
+																	<!-- 单个  end  -->
+																		
+																		
+																		
+																</div>
+																
+																
+																
+																<!-- ===================================================== -->
+																
+																<!-- 我的关注 -->
+																<div class="attentionContent">
+																    	<div class="inn">
+																    		<a href="javascript:void(0);" class="login-in">
+																    			登录
+																    		</a>后将显示您之前关注的商品
+																    	</div>
+																</div>
+													
+													
+													</div>
+													<!-- 额外的内容(真实内容body)  start-->
 										
-										
-										<!-- 单个 start -->
-											<div class="ex_item">
-												<div class="extra_img">
-													<img src="//img11.360buyimg.com/n4/s160x160_jfs/t5953/126/983276242/123139/19a852f2/592e3399N5446452e.jpg"
-													width="160px" height="160px" />
-												</div>
-												<div class="extra_name">
-													<span>
-														艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
-													</span>
-												</div>	
-												<div class="extra_price">
-													<strong><em>￥</em><i>69.00</i></strong>
-												</div>
-												<div class="extra_btn">
-													<a href="#">
-														<b></b>
-														加入购物车
-													</a>
-												</div>
-											</div>
-											
-											<!-- 单个  end  -->
-											
-											
-											
-											<!-- 单个 start -->
-											<div class="ex_item">
-												<div class="extra_img">
-													<img src="//img11.360buyimg.com/n4/s160x160_jfs/t3307/32/5129177937/444580/89e6e626/5865d422Nf104cd19.jpg"
-													width="160px" height="160px" />
-												</div>
-												<div class="extra_name">
-													<span>
-														艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
-													</span>
-												</div>	
-												<div class="extra_price">
-													<strong><em>￥</em><i>69.00</i></strong>
-												</div>
-												<div class="extra_btn">
-													<a href="#">
-														<b></b>
-														加入购物车
-													</a>
-												</div>
-											</div>
-											
-											<!-- 单个  end  -->
-											
-											
-											<!-- 单个 start -->
-											<div class="ex_item">
-												<div class="extra_img">
-													<img src="//img11.360buyimg.com/n4/s160x160_jfs/t3490/310/1645784436/184882/6445dca/582ebdc4N89dd58d7.jpg"
-													width="160px" height="160px" />
-												</div>
-												<div class="extra_name">
-													<span>
-														艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
-													</span>
-												</div>	
-												<div class="extra_price">
-													<strong><em>￥</em><i>69.00</i></strong>
-												</div>
-												<div class="extra_btn">
-													<a href="#">
-														<b></b>
-														加入购物车
-													</a>
-												</div>
-											</div>
-											
-											<!-- 单个  end  -->
-											
-											
-											<!-- 单个 start -->
-											<div class="ex_item">
-												<div class="extra_img">
-													<img src="//img10.360buyimg.com/n4/s160x160_jfs/t4858/182/92485352/773279/d9ae834c/58da5d2dN85751dd8.jpg"
-													width="160px" height="160px" />
-												</div>
-												<div class="extra_name">
-													<span>
-														艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
-													</span>
-												</div>	
-												<div class="extra_price">
-													<strong><em>￥</em><i>69.00</i></strong>
-												</div>
-												<div class="extra_btn">
-													<a href="#">
-														<b></b>
-														加入购物车
-													</a>
-												</div>
-											</div>
-											
-											<!-- 单个  end  -->
-											
-											
-										</div>
-										
-										
-										
-										<!-- 最近浏览 -->
-									<!-- 	<div class="recentSeeContent_noProduct">
-											<div class="inn">暂时无结果</div>
-										</div> -->
-										<div class="recentSeeContent_hasProduct">
-												
-											<!-- 单个 start -->
-											<div class="ex_item">
-												<div class="extra_img">
-													<img src="//img10.360buyimg.com/n4/s160x160_jfs/t4858/182/92485352/773279/d9ae834c/58da5d2dN85751dd8.jpg"
-													width="160px" height="160px" />
-												</div>
-												<div class="extra_name">
-													<span>
-														艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
-													</span>
-												</div>	
-												<div class="extra_price">
-													<strong><em>￥</em><i>69.00</i></strong>
-												</div>
-												<div class="extra_btn">
-													<a href="#">
-														<b></b>
-														加入购物车
-													</a>
-												</div>
-											</div>
-											
-											<!-- 单个  end  -->
-											
-											
-											
-											<!-- 单个 start -->
-											<div class="ex_item">
-												<div class="extra_img">
-													<img src="//img11.360buyimg.com/n4/s160x160_jfs/t5617/298/860778867/208296/93231a90/592251a5N84b3adb6.jpg"
-													width="160px" height="160px" />
-												</div>
-												<div class="extra_name">
-													<span>
-														艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
-													</span>
-												</div>	
-												<div class="extra_price">
-													<strong><em>￥</em><i>69.00</i></strong>
-												</div>
-												<div class="extra_btn">
-													<a href="#">
-														<b></b>
-														加入购物车
-													</a>
-												</div>
-											</div>
-											
-											<!-- 单个  end  -->
-											
-											
-											<!-- 单个 start -->
-											<div class="ex_item">
-												<div class="extra_img">
-													<img src="//img12.360buyimg.com/n4/s160x160_jfs/t3100/199/5384147744/444276/a0a39b2e/586ca1a7Nc37b4768.jpg"
-													width="160px" height="160px" />
-												</div>
-												<div class="extra_name">
-													<span>
-														艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
-													</span>
-												</div>	
-												<div class="extra_price">
-													<strong><em>￥</em><i>69.00</i></strong>
-												</div>
-												<div class="extra_btn">
-													<a href="#">
-														<b></b>
-														加入购物车
-													</a>
-												</div>
-											</div>
-											
-											<!-- 单个  end  -->
-											
-											
-											<!-- 单个 start -->
-											<div class="ex_item">
-												<div class="extra_img">
-													<img src="//img12.360buyimg.com/n4/s160x160_jfs/t3229/127/5148887812/481736/7fbe0c73/5865e02fNd3e3c8f3.jpg"
-													width="160px" height="160px" />
-												</div>
-												<div class="extra_name">
-													<span>
-														艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
-													</span>
-												</div>	
-												<div class="extra_price">
-													<strong><em>￥</em><i>69.00</i></strong>
-												</div>
-												<div class="extra_btn">
-													<a href="#">
-														<b></b>
-														加入购物车
-													</a>
-												</div>
-											</div>
-											
-											<!-- 单个  end  -->
-												
-												
-												
-										</div>
-										
-										
-										<!-- 我的关注 -->
-										<div class="attentionContent">
-										    	<div class="inn">
-										    		<a href="javascript:void(0);" class="login-in">
-										    			登录
-										    		</a>后将显示您之前关注的商品
-										    	</div>
-										</div>
-								</div>
+								 </div>
 								
-								<!-- end  额外的内容体   -->
+								<!-- end  额外的内容DIV   -->
 							
 							
-						</div>
+							</div>
 					
 						<!--  结束  cart   -->
 					
@@ -1147,12 +1354,12 @@
 			<script src="js/widget/cart_calculator.js" type="text/javascript" charset="utf-8"></script>
 			<script>
 				$(function(){
+						
+						/* 增加 页面进入 特效  */
+						$(".cart-thead").addClass("animated fadeInDownBig");
+						$(".item-item").addClass("animated  bounceInUp");
 					
-					/* 增加 页面进入 特效  */
-					$(".cart-thead").addClass("animated fadeInDownBig");
-					$(".item-item").addClass("animated  bounceInUp");
-					
-					
+						
 					     /*  向上弹出购物车层  start  */
 					
 							$("#selproductBtn").click(function(){
@@ -1214,14 +1421,102 @@
 								
 								var tab_index = $(this).index(); //下面的 content 要和 上面的 tab 的索引 值是一致的 
 								//第一种写法
-							 	$(".extraContent > div").eq(tab_index).css("display","block")
+							 	$(".extraContent .extraContent_body > div").eq(tab_index).css("display","block")
 									.siblings("div").css("display","none"); 
 								
 								
 								
+								// 最近浏览 (无商品时)的 显示 
+							/* 	$(".recentSeeContent").addClass("recentSeeContent_noProduct")
+									.html("<div class=\"inn\">暂时无结果</div>");
+								 */
+								
+								 
 							});
 								
 					     	
+					      
+					         
+					         var $ex_tab = ""; // 全局变量 (用来存储 每次 幽灵按钮 按下后 取到了 哪个tab [用filter 方法 根据 index()或者class属性来获取] )
+					         var max_page = 1 ;// 每个tab的body体  默认 切屏数为 1 页  (根据后台传来的数据 缓存到  data-pageCount 属性 )
+					         var startPage = 1 ; //每个 tab 的 body体 内的 页数 的 初始值 为 1;
+					         
+					         
+					      	 //向前 点击  【幽灵按钮】 
+					      	 $(".ex-prev").click(function(){
+					      		  
+					      		 //返回的 是 有item_curr 这个样式的 a 标签 的  jquery 元素对象
+					      		 $ex_tab = $(".extra a").filter(function(index){
+					      			  return $(this).hasClass("item_curr");
+					      		 });
+					      		 
+					      		 //console.log(ex_tab.attr("class")); 
+					      		 //alert($ex_tab.index()); //显然获取到 index 更加简便
+					      		 
+					      		 
+					      		 //获取 该类 extra 内容 的 小组总数 (用以 进行 控制  幽灵按钮 的 切屏次数 )
+					      		 //data-pagecount = "2"  (即本 tab 体 有且仅可以切 2 屏)
+					      		var op_pageCount =  $(".extraContent .extraContent_body > div").eq($ex_tab.index()).data("pagecount");
+					      		//max_page = op_pageCount; 
+					      		
+					      		if(startPage == 1){
+					      			loading("已经是第一页了!",2);
+					      			return;
+					      		}
+					      		
+					      		
+					      		//特效减
+					      		$(".extraContent .extraContent_body > div").eq($ex_tab.index())
+					      			.find(".guessSinglegroup").eq(startPage-1).fadeOut("slow",function(){
+					      				$(this).css("display","none");  // 淡出 并 隐藏
+					      			});
+					      		$(".extraContent .extraContent_body > div").eq($ex_tab.index())
+				      			.find(".guessSinglegroup").eq(startPage-2).fadeIn("slow",function(){
+				      			     	$(this).css("display","block"); // 淡入 并 显示 
+				      				});
+					      		
+					      		//实际减
+					      		startPage--;
+					      		 
+					      	 });
+					      	 
+					      	
+					      	 //向后 点击 【幽灵按钮】
+					    	 $(".ex-next").click(function(){
+					      		  
+					    		 //返回的 是 有item_curr 这个样式的 a 标签 的  jquery 元素对象
+					      		 $ex_tab = $(".extra a").filter(function(index){
+					      			  return $(this).hasClass("item_curr");
+					      		 });
+					      		 
+					      		 //console.log(ex_tab.attr("class")); 
+					      		 //alert($ex_tab.index()); //显然获取到 index 更加简便
+					      		 
+					      		 
+					      		 //获取 该类 extra 内容 的 小组总数 (用以 进行 控制  幽灵按钮 的 切屏次数 )
+					      		 //data-pagecount = "2"  (即本 tab 体 有且仅可以切 2 屏)
+					      		var op_pageCount =  $(".extraContent .extraContent_body > div").eq($ex_tab.index()).data("pagecount");
+					      		max_page = op_pageCount; 
+					      		 
+					      		 if(startPage >= max_page ){
+					      			loading("最后一页了!",2);
+					      			return;
+					      		 }
+					      		
+					      		$(".extraContent .extraContent_body > div").eq($ex_tab.index())
+				      			.find(".guessSinglegroup").eq(startPage-1).fadeOut("slow",function(){
+				      				$(this).css("display","none");  // 淡出 并 隐藏
+				      			});
+					      		$(".extraContent .extraContent_body > div").eq($ex_tab.index())
+				      			.find(".guessSinglegroup").eq(startPage).fadeIn("slow",function(){
+				      			     	$(this).css("display","block"); // 淡入 并 显示 
+				      				});
+					      		 
+					      		//实际加
+						        startPage++;
+					      	 });
+					      
+					      
 					
 							/* end   extra(额外内容)    */
 							
