@@ -1,135 +1,61 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-		<div class="navbar-inner">
-			<div class="container-fluid">
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</a>
-				<a class="brand" href="index.html"><span>月落晨曦</span></a>
-								
-				<!-- start: Header Menu -->
-				<div class="nav-no-collapse header-nav">
-					<ul class="nav pull-right">
-						<li class="dropdown hidden-phone">
-							<a href="/index.jsp" class="btn dropdown-toggle">
-								<span style="font-family:'楷体';
-								font-weight:bold;font-size:16px;">商城首页</span>
-							</a>
-							
-						</li>
-						<!-- start: Notifications Dropdown -->
-						<li class="dropdown hidden-phone">
-							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="halflings-icon white tasks"></i>
-							</a>
-							<ul class="dropdown-menu tasks">
-								<li class="dropdown-menu-title">
- 									<span>You have 17 tasks in progress</span>
-									<a href="#refresh"><i class="icon-repeat"></i></a>
-								</li>
-								<li>
-                                    <a href="#">
-										<span class="header">
-											<span class="title">iOS Development</span>
-											<span class="percent"></span>
-										</span>
-                                        <div class="taskProgress progressSlim red">80</div> 
-                                    </a>
-                                </li>
-							</ul>
-						</li>
-						<!-- end: Notifications Dropdown -->
-						<!-- start: Message Dropdown -->
-						<li class="dropdown hidden-phone">
-							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="halflings-icon white envelope"></i>
-							</a>
-							<ul class="dropdown-menu messages">
-								<li class="dropdown-menu-title">
- 									<span>You have 9 messages</span>
-									<a href="#refresh"><i class="icon-repeat"></i></a>
-								</li>	
-                            	<li>
-                                    <a href="#">
-										<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
-										<span class="header">
-											<span class="from">
-										    	Dennis Ji
-										     </span>
-											<span class="time">
-										    	6 min
-										    </span>
-										</span>
-                                        <span class="message">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
-                                        </span>  
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-										<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
-										<span class="header">
-											<span class="from">
-										    	Dennis Ji
-										     </span>
-											<span class="time">
-										    	56 min
-										    </span>
-										</span>
-                                        <span class="message">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
-                                        </span>  
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-										<span class="avatar"><img src="img/avatar.jpg" alt="Avatar"></span>
-										<span class="header">
-											<span class="from">
-										    	Dennis Ji
-										     </span>
-											<span class="time">
-										    	3 hours
-										    </span>
-										</span>
-                                        <span class="message">
-                                            Lorem ipsum dolor sit amet consectetur adipiscing elit, et al commore
-                                        </span>  
-                                    </a>
-                                </li>
-								<li>
-                            		<a class="dropdown-menu-sub-footer">View all messages</a>
-								</li>	
-							</ul>
-						</li>
-						<!-- end: Message Dropdown -->
+	<style type="text/css">
+			*{padding:0;margin: 0;}
+			body{font-family: "微软雅黑";font-size: 14px;background: #f8f8f8;}
+			a{text-decoration: none;}
+			li{list-style: none;;}
+			.tMenu_title{float: left;width: 100px;line-height: 70px;text-align: center;}
+			.tMenuBox{width:100%;height:70px;background: #000;margin: 1px auto;}
+			.tMenuBox .tMenuContainer{width: 998px;height:70px;margin: 0px auto;background:#111;}
+			.tMenuBox .tMenuContainer ul li{
+				float: left;
+				background:#111;
+				width:100px;height:70px;
+				line-height:70px;
+				text-align: center;
+				padding: 0px 8px;
+				cursor: pointer;
+				border-right:1px dotted #ccc;
+				/*box-shadow: 0px 0px 6px #fff;*/ 
+			}
+			.tMenuBox .tMenuContainer ul li a{color: #fff;}
+			.tMenuBox .tMenuContainer ul{float: none;margin-left: -8px;}
+			.tMenuBox .tMenuContainer ul li:hover{background: #006DCC;} 
+			.tMenuBox .tMenuContainer ul li:hover ul.subul{display: block;}
+			
+			.tMenuBox .tMenuContainer ul li ul.subul{display: none;}
+			.tMenuBox .tMenuContainer ul li ul.subul li a{color: #fff;}
+			
+		</style>
+		
+		
+		
+		<div class="tMenuBox">
+				<div class="tMenuContainer">
+					<div class="tMenu_title"><span></span></div>
+					<ul>
 						<li>
-							<a class="btn" href="#">
-								<i class="halflings-icon white wrench"></i>
-							</a>
+							<a href="javascript:void(0);">网上商城</a>
+							<!-- <ul class="subul">
+								<li><a href="#">随便</a></li>
+								<li><a href="#">随便1</a></li>
+								<li><a href="#">随便2</a></li>
+								<li><a href="#">随便3</a></li>
+							</ul> -->
 						</li>
-						<!-- start: User Dropdown -->
-						<li class="dropdown">
-							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-								<i class="halflings-icon white user"></i> Dennis Ji
-								<span class="caret"></span>
-							</a>
-							<ul class="dropdown-menu">
-								<li class="dropdown-menu-title">
- 									<span>Account Settings</span>
-								</li>
-								<li><a href="#"><i class="halflings-icon user"></i> Profile</a></li>
-								<li><a href="login.html"><i class="halflings-icon off"></i> Logout</a></li>
-							</ul>
+						<li>
+							<a href="javascript:void(0);">音乐基地</a>
 						</li>
-						<!-- end: User Dropdown -->
+						<li>
+							<a href="javascript:void(0);">新闻娱乐</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">尚未开发</a>
+						</li>
+						<li>
+							<a href="javascript:void(0);">网上商城</a>
+						</li>
 					</ul>
 				</div>
-				<!-- end: Header Menu -->
-				
-			</div>
 		</div>
-	

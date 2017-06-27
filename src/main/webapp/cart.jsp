@@ -7,7 +7,7 @@
 <head>
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Bootstrap Metro Dashboard by Dennis Ji for ARM demo</title>
+	<title></title>
 	<meta name="description" content="Bootstrap Metro Dashboard">
 	<meta name="author" content="Dennis Ji">
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -27,7 +27,6 @@
 	<!-- end: CSS -->
 	<style>
 		*{margin:0;padding:0;}
-		body{}
 		div{display:block;}
 		.container{width:990px;margin:30px auto;height:300px;}
 		.container .w{ width: 990px; margin: 0 auto;}
@@ -154,8 +153,92 @@
 <body>
 		
 			
+			<style>
+					
+					/* start 搜索区域样式  */
+					
+					.search{    
+						width: 990px;
+					    height: 40px;
+					    margin: 30px auto 3px;
+					    position:relative;
+					    background: #fff;
+		    			box-shadow: 1px 1px 8px #888;
+		    			border-radius: 10px;
+					}
+					
+					.search div b{   
+						display: block;
+					    position: absolute;
+					    width: 100px;
+					    height: 40px;
+					    line-height: 99em;
+					    top: 0;
+					    left: 0;
+					    background: url(//misc.360buyimg.com/user/cart/widget/header-2015/i/cart-icon.png) #fff no-repeat;
+					    animation:cartLogoMove 5s ease infinite alternate;
+					 }
+					
+					 .search .cart_search{
+					 	width: 375px;height:40px;
+					 	line-height: 40px;
+					    right: 0px;
+		    			position: absolute;
+		    		 }
+		    		 
+		    		 
+		    		 .search .cart_search .searchTxt{
+		    		 	padding: 15px;
+					    float: none;
+					    margin-top: 3px;
+					    clear: both;
+					    border: 2px solid red;
+				        color: #111;
+					    font-weight: bold;
+					    font-family: "楷体";
+					    font-size: 14px;
+					    width:307px;
+					 }
+		    		 
+		    		 
+		    		 .search .cart_search  .searchBtn{
+		    		     padding: 5px;
+						    width: 57px;
+						    margin-bottom: 6px;
+						    margin-left: 0px;
+						    background: rgba(0,0,0,0.3);
+						    border: 1px solid #111;
+						    box-shadow: 1px 1px 5px #111;
+						    font-family: "楷体";
+						    font-size: 16px;
+						    font-weight: bold;
+						    text-shadow: 0px 0px 7px #777;
+		    		 }
+    		
+    		
+    				 @keyframes cartLogoMove{
+						from{left:0px;}
+						to{left:450px;}
+					}	
+    				
+    				/*  搜索区域样式  end */
+    		 
+			</style>
+			
 		    <div class="navbar">
-			 <%@include file="/commons/top_menu_product.jsp" %>  
+				 <%@include file="/commons/top_menu_product.jsp" %>  
+			</div>
+			
+			
+			<div class="search">
+				<div>
+					<b></b>
+				</div>
+				
+			   <div class="cart_search">
+					<input class="searchTxt" type="text" />
+					<input class="searchBtn" type="button"  id="search_btn" value="搜索"/>
+				</div>
 			</div>
 			
 			<!-- container 开始 -->
@@ -267,31 +350,34 @@
 															<div class="cell p-price">
 																<strong>¥129.00</strong>
 															</div>
-															<div class="cell p-quantity">11</div>
+															<div class="cell p-quantity">
+															
+																	 <div class="cart_main">
+																	 	<div class="submain">
+																		 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
+																			 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
+																		 	 </div>
+																			 <div class="shuliang" id="shuliang" >
+																			 	<span id="tmpUp" class="tmpUp">
+																			 		1
+																			 	</span>
+																			 	<span id="mainDiv" class="mainDiv">
+																			 		1
+																			 	</span>
+																			    <span id="tmpDown" class="tmpDown">
+																			 		1
+																			 	</span>
+																			 </div>
+																			   <div class="increment crFix"  onclick="cartCalc.increment(this);">
+																		     <img  src="img/plus.png" width="25px" height="25px" /></div>
+																	 	</div>
+																 		<span class="p-isStock">有货</span>
+																    </div>
+															
+															
+															</div>
 															<div class="cell p-sum">
-																
-																 <div class="cart_main">
-																 	<div class="submain">
-																	 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
-																		 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
-																	 	 </div>
-																		 <div class="shuliang" id="shuliang" >
-																		 	<span id="tmpUp" class="tmpUp">
-																		 		1
-																		 	</span>
-																		 	<span id="mainDiv" class="mainDiv">
-																		 		1
-																		 	</span>
-																		    <span id="tmpDown" class="tmpDown">
-																		 		1
-																		 	</span>
-																		 </div>
-																		   <div class="increment crFix"  onclick="cartCalc.increment(this);">
-																	     <img  src="img/plus.png" width="25px" height="25px" /></div>
-																 	</div>
-																 	<span class="p-isStock">有货</span>
-																 </div>
-																													
+																			1121										
 															</div>
 															<div class="cell p-action">删除</div>
 															<div class="cell p-action">移到我的关注</div>
@@ -317,31 +403,34 @@
 															<div class="cell p-price">
 																<strong>¥129.00</strong>
 															</div>
-															<div class="cell p-quantity">11</div>
+																<div class="cell p-quantity">
+															
+																	 <div class="cart_main">
+																	 	<div class="submain">
+																		 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
+																			 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
+																		 	 </div>
+																			 <div class="shuliang" id="shuliang" >
+																			 	<span id="tmpUp" class="tmpUp">
+																			 		1
+																			 	</span>
+																			 	<span id="mainDiv" class="mainDiv">
+																			 		1
+																			 	</span>
+																			    <span id="tmpDown" class="tmpDown">
+																			 		1
+																			 	</span>
+																			 </div>
+																			   <div class="increment crFix"  onclick="cartCalc.increment(this);">
+																		     <img  src="img/plus.png" width="25px" height="25px" /></div>
+																	 	</div>
+																 		<span class="p-isStock">有货</span>
+																    </div>
+															
+															
+															</div>
 															<div class="cell p-sum">
-																
-																 <div class="cart_main">
-																 	<div class="submain">
-																	 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
-																		 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
-																	 	 </div>
-																		 <div class="shuliang" id="shuliang" >
-																		 	<span id="tmpUp" class="tmpUp">
-																		 		1
-																		 	</span>
-																		 	<span id="mainDiv" class="mainDiv">
-																		 		1
-																		 	</span>
-																		    <span id="tmpDown" class="tmpDown">
-																		 		1
-																		 	</span>
-																		 </div>
-																		   <div class="increment crFix"  onclick="cartCalc.increment(this);">
-																	     <img  src="img/plus.png" width="25px" height="25px" /></div>
-																 	</div>
-																 	<span class="p-isStock">有货</span>
-																 </div>	
-																													
+																			1121										
 															</div>
 															<div class="cell p-action">删除</div>
 															<div class="cell p-action">移到我的关注</div>
@@ -366,31 +455,34 @@
 															<div class="cell p-price">
 																<strong>¥129.00</strong>
 															</div>
-															<div class="cell p-quantity">11</div>
+																<div class="cell p-quantity">
+															
+																	 <div class="cart_main">
+																	 	<div class="submain">
+																		 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
+																			 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
+																		 	 </div>
+																			 <div class="shuliang" id="shuliang" >
+																			 	<span id="tmpUp" class="tmpUp">
+																			 		1
+																			 	</span>
+																			 	<span id="mainDiv" class="mainDiv">
+																			 		1
+																			 	</span>
+																			    <span id="tmpDown" class="tmpDown">
+																			 		1
+																			 	</span>
+																			 </div>
+																			   <div class="increment crFix"  onclick="cartCalc.increment(this);">
+																		     <img  src="img/plus.png" width="25px" height="25px" /></div>
+																	 	</div>
+																 		<span class="p-isStock">有货</span>
+																    </div>
+															
+															
+															</div>
 															<div class="cell p-sum">
-																
-																 <div class="cart_main">
-																 	<div class="submain">
-																	 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
-																		 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
-																	 	 </div>
-																		 <div class="shuliang" id="shuliang" >
-																		 	<span id="tmpUp" class="tmpUp">
-																		 		1
-																		 	</span>
-																		 	<span id="mainDiv" class="mainDiv">
-																		 		1
-																		 	</span>
-																		    <span id="tmpDown" class="tmpDown">
-																		 		1
-																		 	</span>
-																		 </div>
-																		   <div class="increment crFix"  onclick="cartCalc.increment(this);">
-																	     <img  src="img/plus.png" width="25px" height="25px" /></div>
-																 	</div>
-																 	<span class="p-isStock">缺货</span>
-																 </div>														
-																													
+																			1121										
 															</div>
 															<div class="cell p-action">删除</div>
 															<div class="cell p-action">移到我的关注</div>
@@ -417,31 +509,34 @@
 															<div class="cell p-price">
 																<strong>¥129.00</strong>
 															</div>
-															<div class="cell p-quantity">11</div>
+																<div class="cell p-quantity">
+															
+																	 <div class="cart_main">
+																	 	<div class="submain">
+																		 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
+																			 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
+																		 	 </div>
+																			 <div class="shuliang" id="shuliang" >
+																			 	<span id="tmpUp" class="tmpUp">
+																			 		1
+																			 	</span>
+																			 	<span id="mainDiv" class="mainDiv">
+																			 		1
+																			 	</span>
+																			    <span id="tmpDown" class="tmpDown">
+																			 		1
+																			 	</span>
+																			 </div>
+																			   <div class="increment crFix"  onclick="cartCalc.increment(this);">
+																		     <img  src="img/plus.png" width="25px" height="25px" /></div>
+																	 	</div>
+																 		<span class="p-isStock">有货</span>
+																    </div>
+															
+															
+															</div>
 															<div class="cell p-sum">
-																
-																 <div class="cart_main">
-																 	<div class="submain">
-																	 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
-																		 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
-																	 	 </div>
-																		 <div class="shuliang" id="shuliang" >
-																		 	<span id="tmpUp" class="tmpUp">
-																		 		1
-																		 	</span>
-																		 	<span id="mainDiv" class="mainDiv">
-																		 		1
-																		 	</span>
-																		    <span id="tmpDown" class="tmpDown">
-																		 		1
-																		 	</span>
-																		 </div>
-																		   <div class="increment crFix"  onclick="cartCalc.increment(this);">
-																	     <img  src="img/plus.png" width="25px" height="25px" /></div>
-																 	</div>
-																 	<span class="p-isStock">缺货</span>
-																 </div>														
-																													
+																			1121										
 															</div>
 															<div class="cell p-action">删除</div>
 															<div class="cell p-action">移到我的关注</div>
@@ -688,661 +783,11 @@
 								
 							
 							
-							
-								<!-- 下面是 额外内容 [里面装载的 是 ,猜你喜欢，最近浏览， 我的关注等~] -->
-								<!--   extra start  -->
-								
-								<style>
-									
-									/*  extra tab 样式 */
-									.extra{width:990px;height:36px;margin:10px auto;
-										line-height:36px;padding:5px;cursor:pointer;
-										padding-bottom: 0px;
-									}
-									
-									/*   tab 中的 每个 a  样式 */
-									.extra a{
-										text-decoration:none;
-									    margin-right: 35px;
-									    padding-bottom: 3px;
-									    border-bottom: 2px solid #fff;
-									    
-								    }
-									
-									
-									/*  tab 当前样式  */
-									.extra a.item_curr{ 
-										 color: #e4393c;
-										 font-weight:500;
-										 border-bottom: 2px solid red;
-								    }
-									
-									
-									
-									
-				/****************************  extra body 样式开始 **************************************/
-									
-									
-									
-									.extraContent{position:relative;z-index:1;}
-									
-									
-									
-									/* start 加在 每个 tab 中的 每个 group 上的  用来 控制 只显示 第一组   */
-									
-									.extraContent .tmCommonGroup:not(:first-child){
-										/* 每个tab Body不是第一组 都会隐藏  */
-											width:100%;
-											height:100%;
-											display:none;
-									
-									}
-									
-									
-									/*  end  */
-									
-									
-									/* start 额外的内容 的 左右两边的  (幽灵)按钮  */
-									.extraContent .extra-page a{
-											
-										    color: #999;
-										    text-align: center;
-										    font-size: 42px;
-										    font-weight: 400;
-										    font-family: simsun;
-										    position:absolute;
-										    top: 50%;
-										    margin-top: -60px;
-										    z-index: 3;
-										    display: block;
-										    width: 40px;
-										    height: 100px;
-										    line-height: 100px;
-										    background:rgba(0,0,0,0.2);
-										    transition:all 0.3s ease;
-										    text-decoration:none;
-									}
-									
-									.extraContent .extra-page a:hover{
-										 background: rgba(0,0,0,.6);
-										 color: #fff;
-										 transform:scale(1.1);
-										 transition:all 0.3s ease;
-										 border-radius:10px;
-									}
-									
-									
-									.extraContent .extra-page .ex-prev{
-										left:0px;
-									}
-										
-									.extraContent .extra-page .ex-next{
-										right:0px;
-									}									
-									
-									/*  额外的内容 的 左右两边的   (幽灵)按钮  end  */
-								
-									
-									
-									 
-									
-									/* start 猜你喜欢  */
-									
-									.extraContent .guesslikeContent{
-										width:100%;
-										height:326px;
-										margin-top: -3px;
-									}
-									
-									
-									/* end 猜你喜欢  */
-									
-									
-									
-									 /*  start  最近浏览     */
-									  
-									 /*(最近浏览)   ----- 有 商品展示 */
-									.extraContent .recentSeeContent{
-										width:100%;
-										height:326px;
-										margin-top: -3px;
-										overflow:hidden;
-										display:none;
-										/* background:red; */
-									}
-									
-									 /*(最近浏览 )   ----- 没有   商品展示 (动态增加样式)*/ 
-									.extraContent .recentSeeContent_noProduct{
-										 display: none;
-										 line-height:326px;
-										 text-align:center;
-									}
-									
-									/* 最近浏览   end */
-									
-									
-									
-									
-									
-									 /* 我的关注   start */
-									.extraContent .attentionContent{
-										width:100%;
-										height:326px;
-										margin-top: -3px;
-										display: none;
-										line-height:326px;
-										text-align:center;
-										overflow:hidden;
-									}
-									
-									
-									.extraContent .attentionContent .login-in{
-										color: #005ea7;
-										text-decoration:none;
-										font-size: 20px;
-									}
-									
-									/* 我的关注   end */
-									
-									
-									
-									
-									/*  额外extra div 内容 共通的样式    start  */
-									
-									 .ex_item{
-										width:24.7%;
-										height:99%;
-										float:left;
-										text-align: center;
-										border: 1px dashed #cacaca;
-										cursor:pointer;
-										border-radius: 16px;
-									}
-									
-									 .ex_item:hover{
-										border: 1px solid  #e4393c;
-										box-shadow:0px 0px 2em #e4393c;
-									}
-									
-									
-									 .ex_item .extra_img{
-										  border-radius: 23px;
-										  margin: 16px auto;
-									}
-									
-									 .ex_item .extra_name{
-										height: 61px;
-									    overflow: hidden;
-									    margin-top: -5px;
-									}
-									
-									
-									 .ex_item .extra_name span{
-										color: #666;
-	   									font-weight: bold;
-									}
-									    
-									
-									 .ex_item .extra_btn{
-										    display: inline-block;
-										    height: 28px;
-										    line-height: 28px;
-										    padding: 0 20px;
-										    border: 1px solid #999;
-										    color: #666;
-										    text-align: center;
-										    -webkit-border-radius: 3px;
-										    -moz-border-radius: 3px;
-										    border-radius: 3px;
-										    margin: 10px auto 3px;
-									}  
-									
-									
-									 .ex_item .extra_btn a{text-decoration:none;}
-									
-									 .ex_item .extra_btn b{
-									    height: 18px;
-	    								width: 18px;
-										background-image: url(//misc.360buyimg.com/user/cart/widget/cart-tabs-new/i/addtocart-icons.png);
-										background-position: 0 -57px;
-	    								display: inline-block;
-	    								background-repeat: no-repeat;
-	    								overflow: hidden;
-	    								vertical-align: middle;
-	    								margin-right: 4px;
-									}
-									
-									
-									 .ex_item .extra_btn:hover{
-									border-color: #e4393c;background: #e4393c;}
-									 .ex_item .extra_btn:hover a{color: #fff;}
-									 .ex_item .extra_btn:hover b{
-										background-position: -27px -57px;
-									}
-									
-									 .ex_item .extra_price{
-									    font-size: 16px;
-									    color: #d91f20;
-									    font-family: verdana;
-									    font-weight: 400;
-									}
-									
-									
-									/*  end  额外extra div 内容 共通的样式      */
-								
-									
-								</style>
-								
-								
-								<!-- end extra  -->
-							
-							
-							
-							
-						    	<!-- 额外的内容体tab  start -->
-						    	
-							    <div class="extra">
-										<a class="extra-guessLike item_curr">
-											猜你喜欢
-										</a>
-										<a class="extra-recentSee">
-											最近浏览
-										</a>
-										<a class="extra-attention">
-											我的关注
-										</a>
-								</div>
-								
-								<!-- end    额外的内容体tab   -->
-								
-								
-								
-								
-								<!-- 额外的内容DIV    start-->
-								<div class="extraContent">
-								
-											
-													<!-- start 幽灵按钮 -->
-													
-													<div class="extra-page" style="display: block;">    
-														  <a href="javascript:void(0)" class="ex-prev">&lt;</a>       
-														  <a href="javascript:void(0)" class="ex-next">&gt;</a>   
-												    </div>
-													
-													
-													<!-- 幽灵按钮    end  -->
-													
-													
-													
-													<!-- 额外的内容(真实内容body)  start-->
-													<div class="extraContent_body">
-													
-																		
-														    	<!--  start  猜你喜欢   ====================   -->
-																<div class="guesslikeContent" data-pageCount="2" >
-																
-																    <!-- start  一组    -->
-																	<div class="guessSinglegroup tmCommonGroup">
-																	
-																			<!-- start  单个   -->
-																			<div class="ex_item">
-																				<div class="extra_img">
-																					<img src="//img11.360buyimg.com/n4/s160x160_jfs/t5953/126/983276242/123139/19a852f2/592e3399N5446452e.jpg"
-																					width="160px" height="160px" />
-																				</div>
-																				<div class="extra_name">
-																					<span>
-																						艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
-																					</span>
-																				</div>	
-																				<div class="extra_price">
-																					<strong><em>￥</em><i>69.00</i></strong>
-																				</div>
-																				<div class="extra_btn">
-																					<a href="#">
-																						<b></b>
-																						加入购物车
-																					</a>
-																				</div>
-																			</div>
-																			
-																			<!-- 单个  end  -->
-																			
-																			
-																			
-																			<!-- start 单个  -->
-																			<div class="ex_item">
-																				<div class="extra_img">
-																					<img src="//img11.360buyimg.com/n4/s160x160_jfs/t3307/32/5129177937/444580/89e6e626/5865d422Nf104cd19.jpg"
-																					width="160px" height="160px" />
-																				</div>
-																				<div class="extra_name">
-																					<span>
-																						艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
-																					</span>
-																				</div>	
-																				<div class="extra_price">
-																					<strong><em>￥</em><i>69.00</i></strong>
-																				</div>
-																				<div class="extra_btn">
-																					<a href="#">
-																						<b></b>
-																						加入购物车
-																					</a>
-																				</div>
-																			</div>
-																			
-																			<!-- 单个  end  -->
-																			
-																			
-																			<!--  start  单个  -->
-																			<div class="ex_item">
-																				<div class="extra_img">
-																					<img src="//img11.360buyimg.com/n4/s160x160_jfs/t3490/310/1645784436/184882/6445dca/582ebdc4N89dd58d7.jpg"
-																					width="160px" height="160px" />
-																				</div>
-																				<div class="extra_name">
-																					<span>
-																						艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
-																					</span>
-																				</div>	
-																				<div class="extra_price">
-																					<strong><em>￥</em><i>69.00</i></strong>
-																				</div>
-																				<div class="extra_btn">
-																					<a href="#">
-																						<b></b>
-																						加入购物车
-																					</a>
-																				</div>
-																			</div>
-																			
-																			<!-- 单个  end  -->
-																			
-																			
-																			<!-- start   单个  -->
-																			<div class="ex_item">
-																				<div class="extra_img">
-																					<img src="//img10.360buyimg.com/n4/s160x160_jfs/t4858/182/92485352/773279/d9ae834c/58da5d2dN85751dd8.jpg"
-																					width="160px" height="160px" />
-																				</div>
-																				<div class="extra_name">
-																					<span>
-																						艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
-																					</span>
-																				</div>	
-																				<div class="extra_price">
-																					<strong><em>￥</em><i>69.00</i></strong>
-																				</div>
-																				<div class="extra_btn">
-																					<a href="#">
-																						<b></b>
-																						加入购物车
-																					</a>
-																				</div>
-																			</div>
-																			
-																			<!-- 单个  end  -->
-																	</div>
-																	
-																	 <!--  一组    end  -->
-																	 
-																	 
-																	 
-																	 
-																	  <!--  start 一组      -->
-																	 
-																	 <div class="guessSinglegroup tmCommonGroup">
-																	 
-																					<!-- start  单个  -->
-																					<div class="ex_item">
-																						<div class="extra_img">
-																							<img src="//img10.360buyimg.com/n4/s160x160_jfs/t4858/182/92485352/773279/d9ae834c/58da5d2dN85751dd8.jpg"
-																							width="160px" height="160px" />
-																						</div>
-																						<div class="extra_name">
-																							<span>
-																								艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
-																							</span>
-																						</div>	
-																						<div class="extra_price">
-																							<strong><em>￥</em><i>69.00</i></strong>
-																						</div>
-																						<div class="extra_btn">
-																							<a href="#">
-																								<b></b>
-																								加入购物车
-																							</a>
-																						</div>
-																					</div>
-																					
-																					<!-- 单个  end  -->
-																					
-																					
-																					
-																					<!-- start  单个  -->
-																					<div class="ex_item">
-																						<div class="extra_img">
-																							<img src="//img11.360buyimg.com/n4/s160x160_jfs/t5617/298/860778867/208296/93231a90/592251a5N84b3adb6.jpg"
-																							width="160px" height="160px" />
-																						</div>
-																						<div class="extra_name">
-																							<span>
-																								艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
-																							</span>
-																						</div>	
-																						<div class="extra_price">
-																							<strong><em>￥</em><i>69.00</i></strong>
-																						</div>
-																						<div class="extra_btn">
-																							<a href="#">
-																								<b></b>
-																								加入购物车
-																							</a>
-																						</div>
-																					</div>
-																					
-																					<!-- 单个  end  -->
-																					
-																					
-																					<!--  start 单个  -->
-																					<div class="ex_item">
-																						<div class="extra_img">
-																							<img src="//img12.360buyimg.com/n4/s160x160_jfs/t3100/199/5384147744/444276/a0a39b2e/586ca1a7Nc37b4768.jpg"
-																							width="160px" height="160px" />
-																						</div>
-																						<div class="extra_name">
-																							<span>
-																								艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
-																							</span>
-																						</div>	
-																						<div class="extra_price">
-																							<strong><em>￥</em><i>69.00</i></strong>
-																						</div>
-																						<div class="extra_btn">
-																							<a href="#">
-																								<b></b>
-																								加入购物车
-																							</a>
-																						</div>
-																					</div>
-																					
-																					<!-- 单个  end  -->
-																					
-																					
-																					<!-- start   单个  -->
-																					<div class="ex_item">
-																						<div class="extra_img">
-																							<img src="//img12.360buyimg.com/n4/s160x160_jfs/t3229/127/5148887812/481736/7fbe0c73/5865e02fNd3e3c8f3.jpg"
-																							width="160px" height="160px" />
-																						</div>
-																						<div class="extra_name">
-																							<span>
-																								艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
-																							</span>
-																						</div>	
-																						<div class="extra_price">
-																							<strong><em>￥</em><i>69.00</i></strong>
-																						</div>
-																						<div class="extra_btn">
-																							<a href="#">
-																								<b></b>
-																								加入购物车
-																							</a>
-																						</div>
-																					</div>
-																					
-																					<!-- 单个  end  -->
-																	 
-																	 </div>
-																	 
-																	   <!--   一组  end     -->
-																	 
-																	 
-																	 
-																	 
-																	
-																	
-																</div>
-																
-																<!--  猜你喜欢  end -->
-																
-																
-																
-																<!-- ===================================================== -->
-																
-																
-																<!-- 最近浏览  start -->
-																<div class="recentSeeContent">
-																
-																
-																 <!-- start  一组    -->
-																	<div class="guessSinglegroup tmCommonGroup">
-																		
-																					<!-- start  单个  -->
-																					<div class="ex_item">
-																						<div class="extra_img">
-																							<img src="//img12.360buyimg.com/n4/s160x160_jfs/t4024/97/1009506149/242270/19b6c90/5866195dNb3c7d925.jpg"
-																							width="160px" height="160px" />
-																						</div>
-																						<div class="extra_name">
-																							<span>
-																								艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
-																							</span>
-																						</div>	
-																						<div class="extra_price">
-																							<strong><em>￥</em><i>69.00</i></strong>
-																						</div>
-																						<div class="extra_btn">
-																							<a href="#">
-																								<b></b>
-																								加入购物车
-																							</a>
-																						</div>
-																					</div> 
-																					
-																					<!-- 单个  end  -->
-																					
-																					
-																					
-																					<!-- start  单个  -->
-																				 	<div class="ex_item">
-																						<div class="extra_img">
-																							<img src="//img13.360buyimg.com/n4/s160x160_jfs/t3913/227/492376478/440635/7e315c0e/5850b118N74f649a5.jpg"
-																							width="160px" height="160px" />
-																						</div>
-																						<div class="extra_name">
-																							<span>
-																								艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
-																							</span>
-																						</div>	
-																						<div class="extra_price">
-																							<strong><em>￥</em><i>69.00</i></strong>
-																						</div>
-																						<div class="extra_btn">
-																							<a href="#">
-																								<b></b>
-																								加入购物车
-																							</a>
-																						</div>
-																					</div> 
-																					
-																					<!-- 单个  end  -->
-																					
-																					
-																					<!--  start 单个  -->
-																					 <div class="ex_item">
-																						<div class="extra_img">
-																							<img src="//img10.360buyimg.com/n4/s160x160_jfs/t4627/196/3643320542/393677/95eaa542/59018657N85548675.jpg"
-																							width="160px" height="160px" />
-																						</div>
-																						<div class="extra_name">
-																							<span>
-																								艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
-																							</span>
-																						</div>	
-																						<div class="extra_price">
-																							<strong><em>￥</em><i>69.00</i></strong>
-																						</div>
-																						<div class="extra_btn">
-																							<a href="#">
-																								<b></b>
-																								加入购物车
-																							</a>
-																						</div>
-																					</div> 
-																					
-																					<!-- 单个  end  -->
-																					
-																					
-																					<!-- start   单个  -->
-																					<div class="ex_item">
-																						<div class="extra_img">
-																							<img src="//img11.360buyimg.com/n4/s160x160_jfs/t3136/279/407690607/385778/8eae0606/57b434f6N75abe37a.jpg"
-																							width="160px" height="160px" />
-																						</div>
-																						<div class="extra_name">
-																							<span>
-																								艾路丝婷夏装2017防晒衣休闲中长款女外套开衫宽松空调衫Y0855 白色 155/80A/S
-																							</span>
-																						</div>	
-																						<div class="extra_price">
-																							<strong><em>￥</em><i>69.00</i></strong>
-																						</div>
-																						<div class="extra_btn">
-																							<a href="#">
-																								<b></b>
-																								加入购物车
-																							</a>
-																						</div>
-																					</div> 
-																					
-																					<!-- 单个  end  -->
-																		
-																		</div>
-																		
-																</div>
-																
-																
-																
-																<!-- ===================================================== -->
-																
-																<!-- 我的关注 -->
-																<div class="attentionContent">
-																    	<div class="inn">
-																    		<a href="javascript:void(0);" class="login-in">
-																    			登录
-																    		</a>后将显示您之前关注的商品
-																    	</div>
-																</div>
-													
-													
-													</div>
-													<!-- 额外的内容(真实内容body)  start-->
-										
-								 </div>
-								
-								<!-- end  额外的内容DIV   -->
+							  <%--  <%@include file="extra.jsp" %>   --%>
+							  
+							  <!-- 额外部分 -->
+							  <jsp:include flush="true" page="extra.jsp"></jsp:include>
+							  
 							
 							
 							</div>
@@ -1358,11 +803,24 @@
 			<script src="js/widget/cart_calculator.js" type="text/javascript" charset="utf-8"></script>
 			<script>
 				$(function(){
+					
+						
+						
+						$(window).height("300px");
+						
+						console.log($(document).height());
+						console.log($(window).height());
+						
+						$(window).scroll(function(){
+						   console.log(11111111111);
+						})
+					
 						
 						/* 增加 页面进入 特效  */
 						$(".cart-thead").addClass("animated fadeInDownBig");
 						$(".item-item").addClass("animated  bounceInUp");
-					
+						
+						
 						
 					     /*  向上弹出购物车层  start  */
 					
@@ -1383,6 +841,7 @@
 							var totleCount = 35;
 							var pageCount = parseInt(35/10);  //总共有多少页(推屏)
 							var i = 0;
+							
 							$("#next").click(function(){
 								
 								//处理正在运动中的 元素 (必须等待正在运动中的元素 运动完毕之后才可以进行下一步的 操作)
@@ -1414,37 +873,21 @@
 					      /* end  向上弹出购物车层    */
 					
 					
-					
-					
-							/*  extra(额外内容)   start  */
-					
-							$(".extra a").hover(function(){
-								$(this).addClass("item_curr").siblings("a").removeClass("item_curr");
-								//console.log($(this).index()); //因为 这个("extra a") 选择器查询出来的 多个 <a>标签,
-								// 我们就可以进行index()去获取 每个a标签 所在的 索引
-								
-								var tab_index = $(this).index(); //下面的 content 要和 上面的 tab 的索引 值是一致的 
-								//第一种写法
-							 	$(".extraContent .extraContent_body > div").eq(tab_index).css("display","block")
-									.siblings("div").css("display","none"); 
-								
-								
-								
-								// 最近浏览 (无商品时)的 显示 
-							/* 	$(".recentSeeContent").addClass("recentSeeContent_noProduct")
-									.html("<div class=\"inn\">暂时无结果</div>");
-								 */
-								
-								 
-							});
-								
-					     	
 					      
+					      
+					      
+					      
+					      
+							/*  extra(额外内容)   start  */
+								
+							
+							
+							//====================  start  幽灵按钮  ====================================
 					         
 					         var $ex_tab = ""; // 全局变量 (用来存储 每次 幽灵按钮 按下后 取到了 哪个tab [用filter 方法 根据 index()或者class属性来获取] )
 					         var max_page = 1 ;// 每个tab的body体  默认 切屏数为 1 页  (根据后台传来的数据 缓存到  data-pageCount 属性 )
 					         var startPage = 1 ; //每个 tab 的 body体 内的 页数 的 初始值 为 1;
-					         
+					         var currentTab = -1; //同来存储 当前 tab; 用于 切换 tab 时候 重新计算 max_page 和 将 tab 的 body 的 startPage 还原
 					         
 					      	 //向前 点击  【幽灵按钮】 
 					      	 $(".ex-prev").click(function(){
@@ -1456,6 +899,7 @@
 					      		 
 					      		 //console.log(ex_tab.attr("class")); 
 					      		 //alert($ex_tab.index()); //显然获取到 index 更加简便
+					      		 
 					      		 
 					      		 
 					      		 //获取 该类 extra 内容 的 小组总数 (用以 进行 控制  幽灵按钮 的 切屏次数 )
@@ -1493,6 +937,16 @@
 					      			  return $(this).hasClass("item_curr");
 					      		 });
 					      		 
+					      		
+					    		 
+					      		 
+					      		 if($ex_tab.index() != currentTab){
+					      			 currentTab = $ex_tab.index();   // 更改 tab 
+					      			 startPage = 1; // 将 原先的 startPage 还原为第 1 个
+					      			 
+					      		 }
+					    		 
+					      		 
 					      		 //console.log(ex_tab.attr("class")); 
 					      		 //alert($ex_tab.index()); //显然获取到 index 更加简便
 					      		 
@@ -1520,7 +974,54 @@
 						        startPage++;
 					      	 });
 					      
-					      
+					      	
+					    		//==================== 幽灵按钮   end ====================================
+					      	 
+					      	    
+					    			
+					    	   //====================  start  tab ====================================
+					      	 
+					    	
+								$(".extra a").hover(function(){
+									$(this).addClass("item_curr").siblings("a").removeClass("item_curr");
+									//console.log($(this).index()); //因为 这个("extra a") 选择器查询出来的 多个 <a>标签,
+									// 我们就可以进行index()去获取 每个a标签 所在的 索引
+									
+									var tab_index = $(this).index(); //下面的 content 要和 上面的 tab 的索引 值是一致的 
+									//第一种写法
+								 	$(".extraContent .extraContent_body > div").eq(tab_index).css("display","block")
+										.siblings("div").css("display","none"); 
+									
+									
+								 //当 最近两次的tab不相同时 : 
+								 // startPage 要还原 并且 设置为首屏 (当前 类型的 首个小组)
+				      			 if( tab_index != currentTab){
+					      			 currentTab = tab_index;   // 更改 tab 
+					      			 startPage = 1; // 将 原先的 startPage 还原为第 1 个
+					      			 
+					      			 
+					      			 //展示的 div 层 我们也要 还原为 第一个~
+					      			 $(".extraContent .extraContent_body > div").eq(tab_index)
+						      			.find("div.guessSinglegroup").eq(0)   
+					      			 	.css("display","block").siblings("div.guessSinglegroup").css("display","none");
+					      			 
+					      			 
+					      		 }
+				      			 	
+									
+									
+									// 最近浏览 (无商品时)的 显示 
+								/* 	$(".recentSeeContent").addClass("recentSeeContent_noProduct")
+										.html("<div class=\"inn\">暂时无结果</div>");
+									 */
+									
+									 
+								});
+					      	 
+					      	 
+								//====================  tab   end ====================================
+					      	 
+					      	 
 					
 							/* end   extra(额外内容)    */
 							
