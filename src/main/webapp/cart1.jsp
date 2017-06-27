@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@include file="/commons/taglib.jsp" %>   
+<%@include file="/commons/public.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,13 +9,24 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>cart!!!</h1>
+
+	<style>
+		
+		body{background:#aaa;}
+		.test{height:3300px;width:2000px;}
+	</style>
+
+	<div class="test"></div>
 	
-	<a href="cart.jsp">加入购物车</a>
-	<a href="cart1.jsp">加入购物车11111</a>
-	<br>
-	<br>
-	<a href="exercise.jsp">练习测试</a>
 	
+	<script>
+	
+		$(function(){
+			 $(document).scroll(function(){
+					console.log(1212121212);
+			}); 
+		});
+	</script>
+
 </body>
 </html>

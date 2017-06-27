@@ -27,8 +27,8 @@
 	<!-- end: CSS -->
 	<style>
 		*{margin:0;padding:0;}
-		div{display:block;}
-		.container{width:990px;margin:30px auto;height:300px;}
+		/* body{height:auto;} */
+		.container{width:990px;margin:30px auto;}
 		.container .w{ width: 990px; margin: 0 auto;}
 		.container .w .mb10{ margin-bottom: 10px;}
 		.container .w .nologin-tip{
@@ -82,7 +82,7 @@
 			    color: #fff;
    			    text-shadow: 1px 1px 1px #FFF;
 	   }
-	   .cart-warp{}
+	   .cart-warp{width:990px;height:height:100%;}
 	   .cart-warp .cart .cart-thead .column{float:left;}
 	   .cart-checkbox{
 			    position: relative;
@@ -785,9 +785,14 @@
 							
 							  <%--  <%@include file="extra.jsp" %>   --%>
 							  
-							  <!-- 额外部分 -->
-							  <jsp:include flush="true" page="extra.jsp"></jsp:include>
+							<%--   <!-- 额外部分 -->
+							  <jsp:include flush="true" page="extra.jsp"></jsp:include> --%>
 							  
+							  <style>
+							  
+							  		.tm{width:1000px;height:2000px;background:red;}
+							  </style>
+							  <div class="tm"></div>
 							
 							
 							</div>
@@ -804,9 +809,6 @@
 			<script>
 				$(function(){
 					
-						
-						
-						$(window).height("300px");
 						
 						console.log($(document).height());
 						console.log($(window).height());
