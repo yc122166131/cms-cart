@@ -408,10 +408,27 @@
 
 </head>
 <body>
-
+			<style>
+				/*  start 搜索副本  */
+				.replica_search_main{width:100%;height:40px;position:fixed;top:1px;left:0px;z-index:13;display:none;}
+				.replica_search_main .search{width:990px;height:40px;margin:1px auto;}
+				.replica_search_main .tmp_search{margin: 0px auto 3px;}
+			    /*  搜索副本  end  */
+			</style>
 
 		
-	
+		   <div class="replica_search_main">
+		   		<div class="search tmp_search">
+		   			<div>
+						<b></b>
+					</div>
+					
+				   <div class="cart_search">
+						<input class="searchTxt" type="text" />
+						<input class="searchBtn" type="button"  id="search_btn" value="搜索"/>
+					</div>
+		   		</div>
+		   </div>
 		   <div class="navbar">
 				 <%@include file="/commons/top_menu_product.jsp" %>  
 		   </div>
@@ -426,7 +443,7 @@
 					<input class="searchTxt" type="text" />
 					<input class="searchBtn" type="button"  id="search_btn" value="搜索"/>
 				</div>
-		  </div>
+		   </div>
 	
 	
 		<!-- container 开始 -->
@@ -831,10 +848,22 @@
 			
 			
 				$(function(){
+					
+					//临时搜索区域 随 滚动 自动显示 隐藏
 					$(document).scroll(function(){
-						console.log($(this).scrollTop());
+						
+						if($(this).scrollTop() > 150){
+							$(".replica_search_main").css("display","block");
+						}else{
+							$(".replica_search_main").css("display","none");
+						}
+						
 					});
+					
 				});
+			    
+			    
+			    
 			
 			
 				$(function(){
@@ -903,11 +932,17 @@
 					      
 					      
 							/*  extra(额外内容)   start  */
-								
 							
 							
+							$(".extraContent").hover(function(){
+								$(".ex-prev,.ex-next").css({"display":"block"});
+							},function(){
+								$(".ex-prev,.ex-next").css({"display":"none"});
+							});
+					      
 							//====================  start  幽灵按钮  ====================================
-					         
+								
+								
 					         var $ex_tab = ""; // 全局变量 (用来存储 每次 幽灵按钮 按下后 取到了 哪个tab [用filter 方法 根据 index()或者class属性来获取] )
 					         var max_page = 1 ;// 每个tab的body体  默认 切屏数为 1 页  (根据后台传来的数据 缓存到  data-pageCount 属性 )
 					         var startPage = 1 ; //每个 tab 的 body体 内的 页数 的 初始值 为 1;

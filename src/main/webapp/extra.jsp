@@ -40,7 +40,6 @@
 									.extraContent{position:relative;z-index:1;}
 									
 									
-									
 									/* start 加在 每个 tab 中的 每个 group 上的  用来 控制 只显示 第一组   */
 									
 									.extraContent .tmCommonGroup:not(:first-child){
@@ -87,10 +86,12 @@
 									
 									.extraContent .extra-page .ex-prev{
 										left:0px;
+										display:none;
 									}
 										
 									.extraContent .extra-page .ex-next{
 										right:0px;
+										display:none;
 									}									
 									
 									/*  额外的内容 的 左右两边的   (幽灵)按钮  end  */
