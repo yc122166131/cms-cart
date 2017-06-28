@@ -105,6 +105,7 @@
 										width:100%;
 										height:326px;
 										margin-top: -3px;
+										overflow:hidden;
 									}
 									
 									
@@ -181,10 +182,14 @@
 									 .ex_item .extra_img{
 										  border-radius: 23px;
 										  margin: 16px auto;
+										  overflow:hidden;
+										  height: 150px;width:150px;border-raduis:50%;}
 									}
 									
+								 .ex_item .extra_img img{height: 150px;width:150px;border-raduis:50%;}
+									
 									 .ex_item .extra_name{
-										height: 61px;
+										height: 77px;
 									    overflow: hidden;
 									    margin-top: -5px;
 									}

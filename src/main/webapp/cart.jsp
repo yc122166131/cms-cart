@@ -1,34 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@include file="/commons/taglib.jsp" %>   
-<%@include file="/commons/public.jsp" %>
-<!DOCTYPE html>
-<html lang="en">
+<%@include file="/commons/taglib.jsp" %>  
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-	<!-- start: Meta -->
-	<meta charset="utf-8">
-	<title></title>
-	<meta name="description" content="Bootstrap Metro Dashboard">
-	<meta name="author" content="Dennis Ji">
-	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-	<!-- end: Meta -->
-	
-	<!-- start: Mobile Specific -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- end: Mobile Specific -->
-	
-	<!-- start: CSS -->
-	<link id="bootstrap-style" href="css/bootstrap.min.css" rel="stylesheet">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+
+<!-- start: CSS -->
 	<link id="base-style" href="css/style.css" rel="stylesheet">
 	<link id="base-style" href="css/animate.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="js/sg/css/tz-loading.css">
 	<link rel="stylesheet" type="text/css" href="css/widget/cart_calculator.css"/>
 	
-
-	<!-- end: CSS -->
 	<style>
+		
+		/************************  start  cart-wrap和 cart_theader  **********************************/
+	
 		*{margin:0;padding:0;}
-		/* body{height:auto;} */
-		.container{width:990px;margin:30px auto;}
+		.container{width:990px;margin:30px auto;height:1200px;}
 		.container .w{ width: 990px; margin: 0 auto;}
 		.container .w .mb10{ margin-bottom: 10px;}
 		.container .w .nologin-tip{
@@ -114,6 +104,7 @@
 	   
 	  	 .cart-warp .cart .cart-thead .t-goods{
 	   		  width: 224px;
+	   		  text-align:center;
 	   }
 
 	     .cart-warp .cart .cart-thead .t-price{
@@ -144,18 +135,14 @@
 		    border-color: #aaa #f1f1f1 #f1f1f1;
 		    background: #fff;
 	   }
-	     
 	   
-	</style>
-
-</head>
-
-<body>
-		
-			
-			<style>
-					
-					/* start 搜索区域样式  */
+	   
+	   /************************    cart-wrap和 cart_theader  end  **********************************/
+	   
+	   
+	   
+	   
+				/**********************************  start   搜索区域  ****************************************************/	  
 					
 					.search{    
 						width: 990px;
@@ -180,15 +167,16 @@
 					 }
 					
 					 .search .cart_search{
-					 	width: 375px;height:40px;
-					 	line-height: 40px;
+					 	width: 375px;height:48px;
+					 	line-height: 48px;
 					    right: 0px;
 		    			position: absolute;
+		    			top:-2px;
 		    		 }
 		    		 
 		    		 
 		    		 .search .cart_search .searchTxt{
-		    		 	padding: 15px;
+		    		 	padding: 6px 0px;
 					    float: none;
 					    margin-top: 3px;
 					    clear: both;
@@ -196,15 +184,15 @@
 				        color: #111;
 					    font-weight: bold;
 					    font-family: "楷体";
-					    font-size: 14px;
+					    font-size: 18px;
 					    width:307px;
 					 }
 		    		 
 		    		 
 		    		 .search .cart_search  .searchBtn{
-		    		     padding: 5px;
+		    		        padding: 0px;
 						    width: 57px;
-						    margin-bottom: 6px;
+						    margin-bottom: 8px;
 						    margin-left: 0px;
 						    background: rgba(0,0,0,0.3);
 						    border: 1px solid #111;
@@ -213,6 +201,9 @@
 						    font-size: 16px;
 						    font-weight: bold;
 						    text-shadow: 0px 0px 7px #777;
+						    height: 37px;
+   						    line-height: 37px;
+   						    cursor:pointer;
 		    		 }
     		
     		
@@ -220,17 +211,213 @@
 						from{left:0px;}
 						to{left:450px;}
 					}	
-    				
-    				/*  搜索区域样式  end */
-    		 
-			</style>
-			
-		    <div class="navbar">
+	     
+	     
+				/********************************** 搜索区域    end ****************************************************/	  
+	     
+	   			
+	   			
+	   			
+	   			
+	   			
+	   			
+					/**************************  start  cart-body  ***********************************/
+				
+				
+					.item-full{width:100%;}
+					.f-price{
+							float: left;
+						    min-width: 100px;
+						    text-align: right;
+						    font-family: verdana;
+						    line-height: 13px;
+						    color: #333;
+					}
+					.item-selected{background:#fff4e8;}
+					.cart-tbody .item-item{
+							    position: relative;
+							    padding: 0 10px 1px 10px;
+							    border-top: 1px solid #c5c5c5;
+							    line-height: 20px;
+							    _height: 116px;
+							    height:120px;
+							    background: linear-gradient(to left,#fff,pink 30%,pink 70%,#fff 100%);
+							    box-shadow: 5px 6px 1em #111;
+							    margin-bottom: 10px;
+					}
+					.item-full .item-form{border-top: 1px solid #f1f1f1;cursor:pointer;}
+					
+					.cart-tbody .cell{
+						 float: left;
+ 								 padding: 8px 0 8px;
+ 								
+ 								 
+					}
+					
+					.cart-item-list .item-form .p-checkbox{height: 100px;
+					    line-height: 100px;
+					    padding-top: 7px;
+					    width: 33px;
+				     }
+					.cart-item-list .item-form .p-goods{ width: 345px;}
+					.cart-item-list .item-form .p-price{ width: 120px; padding-right: 40px;text-align: center;line-height: 80px; }
+					.cart-item-list .item-form .p-quantity{ width: 85px;text-align: center; line-height:80px;line-height: 80px;  }
+					.cart-item-list .item-form .p-sum{width: 168px;  padding-right: 40px;text-align: center;line-height: 80px; }
+					.cart-item-list .item-form .p-action{ width: 133px; line-height: 7px;margin-top:10px;}
+					.cart-item-list .item-form .cart_main .p-isStock{ position: relative ; top: -28px;}
+					  
+					
+					.p-img{width:100px;height:100px;overflow:hidden;}
+					.p-img img{width:87px;height:87px;border-radius:50%;}
+					.p-name{width:200px;height:100px;margin-left: 10px;overflow:hidden;}
+					.p-name a{color:#555;font-family:"楷体";
+				     text-shadow:0px 1px 1px #111;font-size:16px;text-decoration:none;}
+				     
+				     
+				     
+				     
+				     /************************** cart-body  end ***********************************/
+				     
+				     
+				     
+				     
+				     	/**************************  start  cart-footer  ***********************************/
+						
+						.cart-floatbar{ height: 53px;line-height:53px;padding:10px 3px;}
+						.cart-floatbar .item-checkbox{width:70px;margin-left:10px;}
+						.cart-floatbar .cellSp{float:left;margin-left:30px}
+						.cart-floatbar .footerOperation a{cursor:pointer;text-decoration:none;margin-left:10px;}
+						.cart-floatbar .footerOperation a:hover{color:#e4393c;transform:scale(1.2);transition:all 0.5s ease;}
+						.amount-sum{width:277px;height:53px;line-height:53px; text-align: center;}
+						.amount-sum b{
+								display: inline-block;
+							    width: 11px;
+							    height: 5px;
+							    background: url(//misc.360buyimg.com/user/cart/css/i/cart-icons-2017.png) -45px -91px;
+							    overflow: hidden;
+							    vertical-align: middle;
+							    margin: -5px 0 0 5px;
+							    -webkit-transition: all .2s ease-in 0s;
+							    transition: all .2s ease-in 0s;
+							    cursor:pointer;
+							    z-index:10000;
+							    position:relative;
+						}
+						.amount-sum b:hover{transform:scale(2);transition:all 0.4s ease;}
+						.amount-sum a{cursor:pointer;text-decoration:none;color:#111;font-weight:bold;}
+						.amount-sum a span{font-size:16px;color:red;font-weight:bold;}
+						.price-sum{width:199px;height:53px;line-height:53px; text-align: center;}
+						.price-sum span{color:red;font-weight:bold;font-size:20px;}
+						.btn-area{width:96px;height:52px;float:right; margin-right: 10px;}
+						.btn-area  a{position:relative;cursor:pointer;}
+						.btn-area a b{
+							position:absolute;
+							width: 96px;
+						    height: 52px;
+						    top: 0;
+						    left: 0;
+						    overflow: hidden;
+						    background: url(//misc.360buyimg.com/user/cart/css/i/cart-submit-btn.png) 0 0 no-repeat;
+							display:block;
+						}
+						
+						/* start  弹出 所选择 商品的 阴影层 */
+						.cart-footer{position:relative;box-shadow: 5px 5px 11px #777; margin-top: 5px;}
+						.cart-footer .selectedProductDiv{
+							position: absolute;
+						   /*  top: -109px;
+						    left: 0px; */
+						    bottom:84px;
+						    left:0px;
+						    width: 990px;
+						    height: 0px;
+						   /*  background:rgba(102,102,102,.65); */
+						    background: rgba(0,0,0,.56);
+						    overflow: hidden;
+						}
+						
+						.cart-footer .selectedProductDiv .selectedProductSum{
+							color: #eee;
+						    margin-left: 33px;
+						    font-weight: bold;
+						    position: relative;
+						    text-shadow: 1px 1px 1px #111;
+						    margin-top: 3px;
+						}
+						
+						.cart-footer .selectedProductDiv  .p_ullist{width:990px;overflow:hidden;margin: 1px auto;}
+						.cart-footer .selectedProductDiv  .p_ullist  ul{height:72px;width: 2000%; position: relative;}
+						
+						.cart-footer .selectedProductDiv  .p_ullist  ul div{position:absolute;width:990px;height:100%;padding:0px 26px;}
+						.cart-footer .selectedProductDiv  .p_ullist  ul div li{float:left; text-align: center;line-height: 72px;
+						list-style:none; margin-left:21px;cursor:pointer;}
+						
+							
+						 	.selectedProductDiv  .selected-inner{position:relative;}
+							.selectedProductDiv  .selected-inner .prev{
+								    position: absolute;
+							    display: block;
+							    width: 15px;
+							    height: 23px;
+							    top: 55%;
+							    margin-top: -11px;
+							    margin-left: 9px;
+							    background: url(//misc.360buyimg.com/user/cart/css/i/cart-icons-2017.png) 0 -114px no-repeat;
+							    overflow:hidden;
+							    z-index:9;
+							}
+							.selectedProductDiv .selected-inner .next{
+									position: absolute;
+							    display: block;
+							    width: 15px;
+							    height: 23px;
+							    top: 55%;
+							    right:2%;
+							    margin-top: -11px;
+							    background: url(//misc.360buyimg.com/user/cart/css/i/cart-icons-2017.png) -15px -114px no-repeat;
+							    overflow: hidden;
+							    z-index:9;
+							} 
+							
+						/*   弹出 所选择 商品的 阴影层  end */
+						
+						
+						.cartFooterShow{animation:cartFooterShow 0.7s ease forwards;}
+						.cartFooterHidden{animation:cartFooterHidden 0.6s ease  forwards;}
+						
+						
+						@keyframes cartFooterShow{
+							from{height:0px;}
+							to{height:110px;}
+						}
+						@keyframes cartFooterHidden{
+							from{height:110px;}
+							to{height:0px;}
+						}
+						
+						
+						
+					 /************************** end  cart-footer ***********************************/
+	   			
+	   			
+		
+		
+	</style>
+
+
+
+</head>
+<body>
+
+
+		
+	
+		   <div class="navbar">
 				 <%@include file="/commons/top_menu_product.jsp" %>  
-			</div>
+		   </div>
 			
 			
-			<div class="search">
+		   <div class="search">
 				<div>
 					<b></b>
 				</div>
@@ -239,9 +426,10 @@
 					<input class="searchTxt" type="text" />
 					<input class="searchBtn" type="button"  id="search_btn" value="搜索"/>
 				</div>
-			</div>
-			
-			<!-- container 开始 -->
+		  </div>
+	
+	
+		<!-- container 开始 -->
 			<div class="container">
 				<div class="w">
 					<div id="chunjie" class="mb10"></div>
@@ -276,58 +464,6 @@
 								
 								
 								
-								<style>
-								
-									.item-full{}
-									.f-price{
-											float: left;
-										    min-width: 100px;
-										    text-align: right;
-										    font-family: verdana;
-										    line-height: 13px;
-										    color: #333;
-									}
-									.item-selected{background:#fff4e8;}
-									.cart-tbody .item-item{
-											    position: relative;
-											    padding: 0 10px 1px 10px;
-											    border-top: 1px solid #c5c5c5;
-											    line-height: 20px;
-											    _height: 116px;
-											    height:120px;
-											    background: linear-gradient(to left,#fff,pink 30%,pink 70%,#fff 100%);
-											    box-shadow: 5px 6px 1em #111;
-											    margin-bottom: 10px;
-									}
-									.item-full .item-form{border-top: 1px solid #f1f1f1;cursor:pointer;}
-									
-									.cart-tbody .cell{
-										 float: left;
-		   								 padding: 8px 0 8px;
-		   								
-		   								 
-									}
-									
-									.cart-item-list .item-form .p-checkbox{height: 100px;
-									    line-height: 100px;
-									    padding-top: 7px;
-									    width: 33px;
-								     }
-									.cart-item-list .item-form .p-goods{ width: 345px;}
-									.cart-item-list .item-form .p-price{ width: 120px; padding-right: 40px;text-align: right;line-height: 80px; }
-									.cart-item-list .item-form .p-quantity{ width: 85px;text-align: center; line-height:80px;line-height: 80px;  }
-									.cart-item-list .item-form .p-sum{width: 168px;  padding-right: 40px;text-align: center;line-height: 80px; }
-									.cart-item-list .item-form .p-action{ width: 133px; line-height: 7px;margin-top:10px;}
-									.cart-item-list .item-form .cart_main .p-isStock{ position: relative ; top: -28px;}
-									  
-									
-									.p-img{width:100px;height:100px;overflow:hidden;}
-									.p-img img{width:87px;height:87px;border-radius:50%;}
-									.p-name{width:200px;height:100px;margin-left: 10px;overflow:hidden;}
-									.p-name a{color:#555;font-family:"楷体";
-								     text-shadow:0px 1px 1px #111;font-size:16px;text-decoration:none;}
-								
-								</style>
 								<div class="cart-item-list">
 									<div class="cart-tbody">
 										<div class="item-list">
@@ -555,124 +691,6 @@
 								
 								
 								
-								<style>	
-								
-										.cart-floatbar{ height: 53px;line-height:53px;padding:10px 3px;}
-										.cart-floatbar .item-checkbox{width:70px;margin-left:10px;}
-										.cart-floatbar .cellSp{float:left;margin-left:30px}
-										.cart-floatbar .footerOperation a{cursor:pointer;text-decoration:none;margin-left:10px;}
-										.cart-floatbar .footerOperation a:hover{color:#e4393c;transform:scale(1.2);transition:all 0.5s ease;}
-										.amount-sum{width:277px;height:53px;line-height:53px; text-align: center;}
-										.amount-sum b{
-												display: inline-block;
-											    width: 11px;
-											    height: 5px;
-											    background: url(//misc.360buyimg.com/user/cart/css/i/cart-icons-2017.png) -45px -91px;
-											    overflow: hidden;
-											    vertical-align: middle;
-											    margin: -5px 0 0 5px;
-											    -webkit-transition: all .2s ease-in 0s;
-											    transition: all .2s ease-in 0s;
-											    cursor:pointer;
-											    z-index:10000;
-											    position:relative;
-										}
-										.amount-sum b:hover{transform:scale(2);transition:all 0.4s ease;}
-										.amount-sum a{cursor:pointer;text-decoration:none;color:#111;font-weight:bold;}
-										.amount-sum a span{font-size:16px;color:red;font-weight:bold;}
-										.price-sum{width:199px;height:53px;line-height:53px; text-align: center;}
-										.price-sum span{color:red;font-weight:bold;font-size:20px;}
-										.btn-area{width:96px;height:52px;float:right; margin-right: 10px;}
-										.btn-area  a{position:relative;cursor:pointer;}
-										.btn-area a b{
-											position:absolute;
-											width: 96px;
-										    height: 52px;
-										    top: 0;
-										    left: 0;
-										    overflow: hidden;
-										    background: url(//misc.360buyimg.com/user/cart/css/i/cart-submit-btn.png) 0 0 no-repeat;
-											display:block;
-										}
-										
-										/* start  弹出 所选择 商品的 阴影层 */
-										.cart-footer{position:relative;box-shadow: 5px 5px 11px #777; margin-top: 5px;}
-										.cart-footer .selectedProductDiv{
-											position: absolute;
-										   /*  top: -109px;
-										    left: 0px; */
-										    bottom:84px;
-										    left:0px;
-										    width: 990px;
-										    height: 0px;
-										   /*  background:rgba(102,102,102,.65); */
-										    background: rgba(0,0,0,.56);
-										    overflow: hidden;
-										}
-										
-										.cart-footer .selectedProductDiv .selectedProductSum{
-											color: #eee;
-										    margin-left: 33px;
-										    font-weight: bold;
-										    position: relative;
-										    text-shadow: 1px 1px 1px #111;
-										    margin-top: 3px;
-										}
-										
-										.cart-footer .selectedProductDiv  .p_ullist{width:990px;overflow:hidden;margin: 1px auto;}
-										.cart-footer .selectedProductDiv  .p_ullist  ul{height:72px;width: 2000%; position: relative;}
-										
-										.cart-footer .selectedProductDiv  .p_ullist  ul div{position:absolute;width:990px;height:100%;padding:3px;}
-										.cart-footer .selectedProductDiv  .p_ullist  ul div li{float:left; text-align: center;line-height: 72px;
-										list-style:none; margin-left:21px;cursor:pointer;}
-										
-	 									
-	 								 	.selectedProductDiv  .selected-inner{position:relative;}
-	 									.selectedProductDiv  .selected-inner .prev{
-	 										    position: absolute;
-											    display: block;
-											    width: 15px;
-											    height: 23px;
-											    top: 55%;
-											    margin-top: -11px;
-											    margin-left: 9px;
-											    background: url(//misc.360buyimg.com/user/cart/css/i/cart-icons-2017.png) 0 -114px no-repeat;
-											    overflow:hidden;
-											    z-index:9;
-	 									}
-	 									.selectedProductDiv .selected-inner .next{
-		 										position: absolute;
-											    display: block;
-											    width: 15px;
-											    height: 23px;
-											    top: 55%;
-											    right:2%;
-											    margin-top: -11px;
-											    background: url(//misc.360buyimg.com/user/cart/css/i/cart-icons-2017.png) -15px -114px no-repeat;
-											    overflow: hidden;
-											    z-index:9;
-	 									} 
-	 									
-										/*   弹出 所选择 商品的 阴影层  end */
-										
-										
-										.cartFooterShow{animation:cartFooterShow 0.7s ease forwards;}
-										.cartFooterHidden{animation:cartFooterHidden 0.6s ease  forwards;}
-										
-										
-										@keyframes cartFooterShow{
-											from{height:0px;}
-											to{height:110px;}
-										}
-										@keyframes cartFooterHidden{
-											from{height:110px;}
-											to{height:0px;}
-										}
-										
-										
-								</style>
-								
-								
 								<div class="cart-footer">
 									<div class="cart-floatbar">
 											<div class="item-checkbox cellSp" style="margin-left: 6px;">
@@ -780,20 +798,13 @@
 									</div>
 									
 								</div>
-								
 							
 							
 							  <%--  <%@include file="extra.jsp" %>   --%>
 							  
-							<%--   <!-- 额外部分 -->
-							  <jsp:include flush="true" page="extra.jsp"></jsp:include> --%>
+							   <!-- 额外部分 -->
+							  <jsp:include flush="true" page="extra.jsp"></jsp:include> 
 							  
-							  <style>
-							  
-							  		.tm{width:1000px;height:2000px;background:red;}
-							  </style>
-							  <div class="tm"></div>
-							
 							
 							</div>
 					
@@ -803,19 +814,30 @@
 				<!-- 结束   cart-warp -->
 			</div>
 			<!-- 结束  container  -->
+	
+	
+	
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script> 
+	<script type="text/javascript" src="${basePath}/js/sg/sgutil.js"></script>
+	<script type="text/javascript" src="${basePath}/js/sg/sg.js"></script> 
+	<script src="js/widget/cart_calculator.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+			
+				
+		 	
+			    /*  document.onscroll = function() {
+			    	console.log(document.documentElement.scrollTop);
+			    }; */
 			
 			
-			<script src="js/widget/cart_calculator.js" type="text/javascript" charset="utf-8"></script>
-			<script>
 				$(function(){
-					
-						
-						console.log($(document).height());
-						console.log($(window).height());
-						
-						$(window).scroll(function(){
-						   console.log(11111111111);
-						})
+					$(document).scroll(function(){
+						console.log($(this).scrollTop());
+					});
+				});
+			
+			
+				$(function(){
 					
 						
 						/* 增加 页面进入 特效  */
@@ -849,7 +871,7 @@
 								//处理正在运动中的 元素 (必须等待正在运动中的元素 运动完毕之后才可以进行下一步的 操作)
 								if(!$(".p_ullist").find("ul").is(":animated")){
 									if(i == pageCount-1){
-										loading("已经是最后一页了!",2);
+										loading("已经是最后一页了!",3);
 										return;
 									} 
 									i++;
@@ -863,7 +885,7 @@
 								if(!$(".p_ullist").find("ul").is(":animated")){
 									
 										if(i == 0){
-											loading("已经到第一页了!",2);
+											loading("已经到第一页了!",3);
 											return;
 										} 
 										i--;
@@ -910,7 +932,7 @@
 					      		//max_page = op_pageCount; 
 					      		
 					      		if(startPage == 1){
-					      			loading("已经是第一页了!",2);
+					      			loading("已经是第一页了!",3);
 					      			return;
 					      		}
 					      		
@@ -939,8 +961,6 @@
 					      			  return $(this).hasClass("item_curr");
 					      		 });
 					      		 
-					      		
-					    		 
 					      		 
 					      		 if($ex_tab.index() != currentTab){
 					      			 currentTab = $ex_tab.index();   // 更改 tab 
@@ -959,7 +979,7 @@
 					      		max_page = op_pageCount; 
 					      		 
 					      		 if(startPage >= max_page ){
-					      			loading("最后一页了!",2);
+					      			loading("最后一页了!",3);
 					      			return;
 					      		 }
 					      		
@@ -1029,7 +1049,7 @@
 							
 				});
 			</script>
-			
-			
+	
+	
 </body>
 </html>
