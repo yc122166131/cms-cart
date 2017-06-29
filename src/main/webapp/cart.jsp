@@ -8,12 +8,26 @@
 <title>Insert title here</title>
 
 <!-- start: CSS -->
-	<link id="base-style" href="css/style.css" rel="stylesheet">
+	<!--  项目共通 css -->
+	<link rel="stylesheet" type="text/css" href="css/yc_common/yc_common.css"/>
+	
+	<!-- 阿里 icon 在线自定义图标仓库 (绑定账号) --记得每次更新图标仓库后要重新生成连接替换下面 -->
+	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_uut0ebcee63tmx6r.css"/>
+	
+	<!-- cart calculator -->
+	<link rel="stylesheet" type="text/css" href="css/widget/cart_calculator.css"/>
+
+	<!-- 封装完毕的 指定滑轮特效 -->	
+	<link rel="stylesheet" type="text/css" href="css/widget/yc_toTop.css"/>
+	
+	
+	<!-- <link id="base-style" href="css/style.css" rel="stylesheet"> -->
 	<link id="base-style" href="css/animate.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="js/sg/css/tz-loading.css">
-	<link rel="stylesheet" type="text/css" href="css/widget/cart_calculator.css"/>
+
 	
 	<style>
+	
 		
 		/************************  start  cart-wrap和 cart_theader  **********************************/
 	
@@ -28,6 +42,8 @@
 			    margin-bottom: 20px;
 			    color: #f70;		
 		}
+		.nologin-tip:hover a{transition:all 0.5s ease;transform:scale(1.1);}
+		
 	
 		.container .w .nologin-tip .wicon{
 				display: inline-block;
@@ -88,6 +104,7 @@
 		    _vertical-align: -1px;
 		    margin: 0 3px 0 0;
 		    padding: 0;
+		    cursor:pointer;
 	  }
 	   
 	   .cart-warp .cart .cart-thead .t-checkbox{
@@ -167,7 +184,7 @@
 					 }
 					
 					 .search .cart_search{
-					 	width: 375px;height:48px;
+					 	width: 456px;height:48px;
 					 	line-height: 48px;
 					    right: 0px;
 		    			position: absolute;
@@ -176,16 +193,17 @@
 		    		 
 		    		 
 		    		 .search .cart_search .searchTxt{
-		    		 	padding: 6px 0px;
+		    		 	padding: 9px 0px;
 					    float: none;
-					    margin-top: 3px;
+					    margin-top: 0px;
 					    clear: both;
-					    border: 2px solid red;
-				        color: #111;
+					    border: 2px solid #ccc;
+					    color: #989898;
 					    font-weight: bold;
 					    font-family: "楷体";
 					    font-size: 18px;
-					    width:307px;
+					    width: 388px;
+					    border-radius: 10px;
 					 }
 		    		 
 		    		 
@@ -254,16 +272,39 @@
  								 
 					}
 					
-					.cart-item-list .item-form .p-checkbox{height: 100px;
+					.cart-item-list .item-form .p-checkbox{
+						height: 26px;
 					    line-height: 100px;
-					    padding-top: 7px;
+					    padding-top: 49px;
 					    width: 33px;
+					    cursor:pointer;
 				     }
+				        
+				     .cart-item-list .item-form .p-checkbox input{
+				          width: 17px;
+  						  height: 17px;
+  						  cursor:pointer;
+				     } 
+				        
+				     
 					.cart-item-list .item-form .p-goods{ width: 345px;}
 					.cart-item-list .item-form .p-price{ width: 120px; padding-right: 40px;text-align: center;line-height: 80px; }
 					.cart-item-list .item-form .p-quantity{ width: 85px;text-align: center; line-height:80px;line-height: 80px;  }
 					.cart-item-list .item-form .p-sum{width: 168px;  padding-right: 40px;text-align: center;line-height: 80px; }
-					.cart-item-list .item-form .p-action{ width: 133px; line-height: 7px;margin-top:10px;}
+					.cart-item-list .item-form .p-action{  
+					    width: 133px;
+					    line-height: 7px;
+					    margin-top: 10px;
+					    box-shadow: 1px 1px 7px #111;
+					    text-align: center;
+					    border-radius: 17px;
+					    background: linear-gradient(to right, pink 80%,#fff 100%);
+					    font-weight: bold;
+					    color: #555;
+					    text-shadow: 1px 2px 5px #e6e6e6;
+					    transition:all 0.6s ease;
+				    }
+				    .cart-item-list .item-form .p-action:hover{transition:all 0.6s ease;transform:scale(1.15);}
 					.cart-item-list .item-form .cart_main .p-isStock{ position: relative ; top: -28px;}
 					  
 					
@@ -412,7 +453,7 @@
 				/*  start 搜索副本  */
 				.replica_search_main{width:100%;height:40px;position:fixed;top:1px;left:0px;z-index:13;display:none;}
 				.replica_search_main .search{width:990px;height:40px;margin:1px auto;}
-				.replica_search_main .tmp_search{margin: 0px auto 3px;}
+				.replica_search_main .tmp_search{margin: 3px auto 3px;}
 			    /*  搜索副本  end  */
 			</style>
 
@@ -446,8 +487,12 @@
 		   </div>
 	
 	
+		
+	
 		<!-- container 开始 -->
 			<div class="container">
+			
+			
 				<div class="w">
 					<div id="chunjie" class="mb10"></div>
 					<div class="nologin-tip">
@@ -467,7 +512,7 @@
 								<div class="cart-thead">
 									<div class="column t-checkbox">
 										<div class="cart-checkbox">
-											<input type="checkbox" checked="checked" id="toggle-checkboxes_up" name="toggle-checkboxes" class="jdcheckbox" >
+											<input type="checkbox" checked="checked" id="theader_chkbox"  class="jdcheckbox" >
 											<label class="checked" for="">勾选全部商品</label>
 										</div>
 										全选
@@ -491,7 +536,7 @@
 												<div class="item-last item-item item-selected  ">
 														<div class="item-form">
 															<div class="cell p-checkbox">
-																<input type="checkbox" checked="checked" id="toggle-checkboxes_up" name="toggle-checkboxes" class="jdcheckbox" >
+																<input type="checkbox" checked="checked" id="sku-chk00001" name="toggle-checkboxes" class="jdcheckbox" >
 															</div>
 															<div class="cell p-goods">
 																<div class=" cell p-img">
@@ -508,7 +553,7 @@
 																	 <div class="cart_main">
 																	 	<div class="submain">
 																		 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
-																			 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
+																			 	<i class="iconfont imgMinus icon-minus"></i>
 																		 	 </div>
 																			 <div class="shuliang" id="shuliang" >
 																			 	<span id="tmpUp" class="tmpUp">
@@ -522,7 +567,8 @@
 																			 	</span>
 																			 </div>
 																			   <div class="increment crFix"  onclick="cartCalc.increment(this);">
-																		     <img  src="img/plus.png" width="25px" height="25px" /></div>
+																		     		<i class="iconfont icon-plus"></i>
+																		       </div>
 																	 	</div>
 																 		<span class="p-isStock">有货</span>
 																    </div>
@@ -544,7 +590,7 @@
 												<div class="item-last item-item item-selected  ">
 														<div class="item-form">
 															<div class="cell p-checkbox">
-																<input type="checkbox" checked="checked" id="toggle-checkboxes_up" name="toggle-checkboxes" class="jdcheckbox" >
+																<input type="checkbox" checked="checked" id="sku-chk00002" name="toggle-checkboxes" class="jdcheckbox" >
 															</div>
 															<div class="cell p-goods">
 																<div class=" cell p-img">
@@ -561,7 +607,7 @@
 																	 <div class="cart_main">
 																	 	<div class="submain">
 																		 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
-																			 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
+																				 <i class="iconfont imgMinus icon-minus"></i>
 																		 	 </div>
 																			 <div class="shuliang" id="shuliang" >
 																			 	<span id="tmpUp" class="tmpUp">
@@ -575,7 +621,8 @@
 																			 	</span>
 																			 </div>
 																			   <div class="increment crFix"  onclick="cartCalc.increment(this);">
-																		     <img  src="img/plus.png" width="25px" height="25px" /></div>
+																		     		<i class="iconfont icon-plus"></i>
+																		       </div>
 																	 	</div>
 																 		<span class="p-isStock">有货</span>
 																    </div>
@@ -596,7 +643,7 @@
 													<div class="item-last item-item item-selected  ">
 														<div class="item-form">
 															<div class="cell p-checkbox">
-																<input type="checkbox" checked="checked" id="toggle-checkboxes_up" name="toggle-checkboxes" class="jdcheckbox" >
+																<input type="checkbox" checked="checked" id="sku-chk00003" name="toggle-checkboxes" class="jdcheckbox" >
 															</div>
 															<div class="cell p-goods">
 																<div class=" cell p-img">
@@ -613,7 +660,7 @@
 																	 <div class="cart_main">
 																	 	<div class="submain">
 																		 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
-																			 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
+																			 	<i class="iconfont imgMinus icon-minus"></i>
 																		 	 </div>
 																			 <div class="shuliang" id="shuliang" >
 																			 	<span id="tmpUp" class="tmpUp">
@@ -627,7 +674,8 @@
 																			 	</span>
 																			 </div>
 																			   <div class="increment crFix"  onclick="cartCalc.increment(this);">
-																		     <img  src="img/plus.png" width="25px" height="25px" /></div>
+																		    	  <i class="iconfont icon-plus"></i>
+																		       </div>
 																	 	</div>
 																 		<span class="p-isStock">有货</span>
 																    </div>
@@ -650,7 +698,7 @@
 													<div class="item-last item-item item-selected  ">
 														<div class="item-form">
 															<div class="cell p-checkbox">
-																<input type="checkbox" checked="checked" id="toggle-checkboxes_up" name="toggle-checkboxes" class="jdcheckbox" >
+																<input type="checkbox" checked="checked" id="sku-chk00004" name="toggle-checkboxes" class="jdcheckbox" >
 															</div>
 															<div class="cell p-goods">
 																<div class=" cell p-img">
@@ -667,7 +715,7 @@
 																	 <div class="cart_main">
 																	 	<div class="submain">
 																		 	 <div  class="decrement clFix" id="decrement" onclick="cartCalc.decrement(this);">
-																			 	<img  src="img/minus.png" width="25px" height="25px" class="imgMinus"/>
+																			 	<i class="iconfont imgMinus icon-minus"></i>
 																		 	 </div>
 																			 <div class="shuliang" id="shuliang" >
 																			 	<span id="tmpUp" class="tmpUp">
@@ -681,7 +729,8 @@
 																			 	</span>
 																			 </div>
 																			   <div class="increment crFix"  onclick="cartCalc.increment(this);">
-																		     <img  src="img/plus.png" width="25px" height="25px" /></div>
+																		    	  <i class="iconfont icon-plus"></i>
+																		       </div>
 																	 	</div>
 																 		<span class="p-isStock">有货</span>
 																    </div>
@@ -708,10 +757,10 @@
 								
 								
 								
-								<div class="cart-footer">
+								<div class="cart-footer animated bounceInDown">
 									<div class="cart-floatbar">
 											<div class="item-checkbox cellSp" style="margin-left: 6px;">
-													<input type="checkbox" checked="checked" id="" name="" class="jdcheckbox" >
+													<input type="checkbox" checked="checked" id="tfooter_chkbox" name="" class="jdcheckbox" >
 													<span>全选</span>
 											</div>					
 											<div class="footerOperation cellSp">
@@ -837,19 +886,26 @@
 	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script> 
 	<script type="text/javascript" src="${basePath}/js/sg/sgutil.js"></script>
 	<script type="text/javascript" src="${basePath}/js/sg/sg.js"></script> 
-	<script src="js/widget/cart_calculator.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="${basePath}/js/widget/cart_calculator.js"></script>
+	<script type="text/javascript" src="js/widget/yc_toTop.js"  charset="utf-8"></script>
 	<script>
-			
-				
 		 	
-			    /*  document.onscroll = function() {
-			    	console.log(document.documentElement.scrollTop);
-			    }; */
+			   
 			
-			
+				/*  start   置顶插件 (by yc)  */
+			    $(function(){
+			    	
+			    	ycTop();
+			    	//ycTop({bgcolor:"red","color":"#fff"});  // 加上自己的bgcolor 和 color
+			   
+			    });
+			    /*  置顶插件  (by yc)    end   */
+			    
+			    
+			    
 				$(function(){
 					
-					//临时搜索区域 随 滚动 自动显示 隐藏
+					//临时 搜索区域 随 滚动 自动显示 隐藏  -----搜索区域副本 
 					$(document).scroll(function(){
 						
 						if($(this).scrollTop() > 150){
@@ -867,11 +923,35 @@
 			
 			
 				$(function(){
-					
+						
 						
 						/* 增加 页面进入 特效  */
 						$(".cart-thead").addClass("animated fadeInDownBig");
 						$(".item-item").addClass("animated  bounceInUp");
+						
+						
+						
+						//当点击theader 或者 tfooter 的 全选时  选中 购物车中所有的 商品
+						$("#theader_chkbox,#tfooter_chkbox").click(function(){
+								
+								 var mainChk = $(this).prop("checked"); 
+								 $(".cart-tbody .item-list .item-item").find(".jdcheckbox").each(
+										 function(item){
+											 $(this).prop("checked",mainChk);		 
+										 }
+								 );
+								 
+						});
+						
+						
+						// cart里 的 每项 单独勾选 
+						$(".cart-tbody .item-list .item-item").find(".jdcheckbox").click(function(){
+							     
+							      var selfChk = $(this).prop("checked");
+							      $(this).prop("checked",selfChk);
+							     
+						});
+						 
 						
 						
 						
@@ -890,21 +970,27 @@
 							
 							
 							
-							//向上弹出 层  左 右 按钮 
-							var totleCount = 35;
-							var pageCount = parseInt(35/10);  //总共有多少页(推屏)
-							var i = 0;
+							
+							var cartObj = {      	              // 我们最好要给每个 定义的变量划分 [命名空间] ！
+									totleCount:35,
+									i : 0,
+									pageCount :  parseInt(35/10)  //总共有多少页(推屏)
+							};
+							
+							
+							
+							// 向上弹出 层  左 右 按钮   (购物车下方的 "已选择xx件商品" 旁边的 小箭头 )
 							
 							$("#next").click(function(){
 								
 								//处理正在运动中的 元素 (必须等待正在运动中的元素 运动完毕之后才可以进行下一步的 操作)
 								if(!$(".p_ullist").find("ul").is(":animated")){
-									if(i == pageCount-1){
+									if(cartObj.i == cartObj.pageCount -1){
 										loading("已经是最后一页了!",3);
 										return;
 									} 
-									i++;
-									$(".p_ullist").find("ul").animate({left:"-"+(990*i)+"px"},1000,function(){}
+									cartObj.i++;
+									$(".p_ullist").find("ul").animate({left:"-"+(990*cartObj.i)+"px"},1000,function(){}
 			 						);
 								}
 							});
@@ -913,19 +999,27 @@
 								
 								if(!$(".p_ullist").find("ul").is(":animated")){
 									
-										if(i == 0){
+										if(cartObj.i == 0){
 											loading("已经到第一页了!",3);
 											return;
 										} 
-										i--;
-										$(".p_ullist").find("ul").animate({left:"-"+(990*i)+"px"},1000,function(){}
+										cartObj.i--;
+										$(".p_ullist").find("ul").animate({left:"-"+(990*cartObj.i)+"px"},1000,function(){}
 				 						);
 								}
 							});
 					
-					      /* end  向上弹出购物车层    */
+					       /* end  向上弹出购物车层     (购物车下方的   "已选择xx件商品" 旁边的 小箭头)  */
 					
 					
+					      
+					      
+					      
+					      
+					      
+					      
+					      /***********************************************************************************/
+					      
 					      
 					      
 					      
@@ -1062,16 +1156,17 @@
 						      			.find("div.guessSinglegroup").eq(0)   
 					      			 	.css("display","block").siblings("div.guessSinglegroup").css("display","none");
 					      			 
-					      			 
 					      		 }
 				      			 	
 									
 									
-									// 最近浏览 (无商品时)的 显示 
-								/* 	$(".recentSeeContent").addClass("recentSeeContent_noProduct")
-										.html("<div class=\"inn\">暂时无结果</div>");
-									 */
+				      			// 最近浏览 (无商品时)的 显示 	
+				      			var op_pageCount =  $(".extraContent .extraContent_body > div").eq(1).data("pagecount");
 									
+				      				if(op_pageCount == 0){ //data-pageCount = 0 时
+				      					$(".recentSeeContent").addClass("recentSeeContent_noProduct")
+				      						.html("<div class=\"inn\">暂时无结果</div>");
+				      				}
 									 
 								});
 					      	 

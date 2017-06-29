@@ -1,0 +1,39 @@
+			@charset "utf-8";
+			
+			/*  点击 置顶   */
+			
+			*{padding: 0;margin: 0;}
+			.uptoTop{
+			    width: 60px;
+			    height: 60px;
+			    background: #111;
+			    position: fixed;
+			    bottom: 52px;
+			    right: 66px;
+			    display: none;
+			    color: #e6e6e6;
+			    border-radius: 13%;
+			    box-shadow: 2px 2px 8px #111;
+			    text-shadow: 1px 1px 1px #FFB;
+			    transition:all 1s ease;
+   			}
+			
+			.toTopIn{animation:uptoTop_customHoverIn 1s ease-in-out forwards alternate;}
+			.toTopLeave{animation:uptoTop_customHoverLeave 1s ease-in-out forwards alternate;}
+			@keyframes uptoTop_customHoverIn{
+				from{transform:scale(0.9) rotate(0deg);}
+				to{transform:scale(1.3) rotate(360deg);}
+			}
+			@keyframes uptoTop_customHoverLeave{
+				from{transform:scale(1.3) rotate(360deg);}
+				to{transform:scale(0.9) rotate(0deg);}
+			}
+			
+			
+			.icon-jiantouxiangshang{
+				 text-align: center;
+			     line-height: 60px;
+			     display: block;
+			     font-size: 42px;
+			     cursor: pointer;
+			}

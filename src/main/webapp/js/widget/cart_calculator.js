@@ -44,7 +44,7 @@
 												  
 													if(!$mainDiv.is(":animated")){
 													  if($mainDiv.text()<=2){
-													    	$(obj).find("img").css("display","none")
+													    	$(obj).find("i").css("display","none")
 													 	 	     .end().removeAttr("onclick");
 														}
 														
@@ -76,7 +76,7 @@
 															 		//下面这种 因为 不需要回退 直接在根路径往下继续走即可
 															 		
 															 		$(obj).parents(".submain").find("div.decrement").attr("onclick","cartCalc.decrement(this);")
-															 		.find("img").css("display","block");
+															 		.find("i").css("display","block");
 														}
 														s1 = parseInt($mainDiv.text())+1;
 														$mainDiv.text(s1);

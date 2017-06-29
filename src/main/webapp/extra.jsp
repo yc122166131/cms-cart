@@ -260,7 +260,7 @@
 							
 						    	<!-- 额外的内容体tab  start -->
 						    	
-							    <div class="extra">
+							    <div class="extra animated bounceInRight">
 										<a class="extra-guessLike item_curr">
 											猜你喜欢
 										</a>
@@ -278,7 +278,7 @@
 								
 								
 								<!-- 额外的内容DIV    start-->
-								<div class="extraContent">
+								<div class="extraContent  animated bounceInLeft">
 								
 											
 													<!-- start 幽灵按钮 -->
