@@ -19,7 +19,7 @@
 
 	<!-- 封装完毕的 指定滑轮特效 -->	
 	<link rel="stylesheet" type="text/css" href="css/widget/yc_toTop.css"/>
-	
+		
 	
 	<!-- <link id="base-style" href="css/style.css" rel="stylesheet"> -->
 	<link id="base-style" href="css/animate.css" rel="stylesheet">
@@ -901,10 +901,14 @@
 		
 		var cart_bz = {
 				login : function(){
-					$.tzIframe({width:390,height:440,title:"用户分配角色",drag:false,content:"12121",callback:function(iframe,$dialog,opts){
-						if(iframe){
-							
-						}
+					$.tzIframe({width:450,height:510,title:"您尚未登录",
+						overlay:true,
+						drag:false,
+						bgcolor:"#ddd",
+						content:"${basePath}/login/logined.action",
+						callback:function(iframe,$dialog,opts){
+							if(iframe){
+							}
 					}});
 				}				
 				

@@ -1,3 +1,5 @@
+/* 修改过  */
+
 (function($){
    /**********************silder*****************************/
    for(i in document.images)document.images[i].ondragstart=function(){return false;};	
@@ -771,7 +773,7 @@ $.tzDialog.methods = {
 	//弹出层的模板
 	template : function(opts){
 		var $dialog = $("<div class='tzui-dialog "+tz_animateIn()+"'>"+
-		"		<h1 class='tzdialog_title'>"+opts.title+"</h1>" +
+		"		<h3 class='tzdialog_title'>"+opts.title+"</h3>" +
 		"		<a href='javascript:void(0);' class='delete'>x</a>"+
 		"		<div class='tzdialog_content tzui-empty'>"+
 		"			<div class='tzdialog_message'>" +
@@ -783,7 +785,11 @@ $.tzDialog.methods = {
 		"			</div>"+
 		"		</div>"+
 		"	</div>");
-		$("body").append($dialog).append("<div class='tmui-overlay'></div>");
+		$("body").append($dialog);
+		if(opts.overlay){
+			$("body").append("<div class='tmui-overlay'></div>");
+		}
+		
 		return $dialog;
 	},
 	events:function($dialog,opts){
@@ -807,6 +813,14 @@ $.tzDialog.methods = {
 			clearTimeout(timer);
 			timer = setTimeout(function(){tzUtil._position($dialog);},30);
 		});
+		
+		if(opts.panel == false){
+			$dialog.find(".tzdialog_panel").addClass("hidePanel");
+		}
+		
+		if(opts.bgcolor){
+			$dialog.css("background",opts.bgcolor);
+		}
 	}
 };
 
@@ -818,7 +832,10 @@ $.tzDialog.defaults = {
 	title:"标题",
 	icon:"success",
 	drag:true,
-	ghost:true,
+	ghost:true,    
+	overlay:true,    //是否显示 遮罩层
+	panel:false,     //是否显示底下的 panel
+	bgcolor:"#fff",  // Dialog 背景色
 	value:"",
 	animate:"top",
 	cancelText:"取消",
