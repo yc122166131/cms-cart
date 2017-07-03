@@ -803,7 +803,7 @@ $.tzDialog.methods = {
 		//关闭按钮事件
 		$dialog.find(".tzdialog_cancel,.delete").on("click",function(){
 			if(opts.callback)opts.callback(false);//回调方法
-			$dialog.next().remove();
+			$dialog.next().slideUp("slow",function(){$(this).remove();})
 			tzUtil.animates($dialog,opts.animate);
 		});
 
@@ -814,12 +814,18 @@ $.tzDialog.methods = {
 			timer = setTimeout(function(){tzUtil._position($dialog);},30);
 		});
 		
-		if(opts.panel == false){
+		//设置是否显示 下面的 button
+		if(opts.buttonShow == false){
 			$dialog.find(".tzdialog_panel").addClass("hidePanel");
+			$dialog.css("overflow", "hidden");
 		}
 		
+		//设置背景色
 		if(opts.bgcolor){
 			$dialog.css("background",opts.bgcolor);
+		}
+		if(opts.bgcolor_content){
+			$dialog.find(".tzdialog_content").css("background",opts.bgcolor_content);
 		}
 	}
 };
@@ -833,9 +839,10 @@ $.tzDialog.defaults = {
 	icon:"success",
 	drag:true,
 	ghost:true,    
-	overlay:true,    //是否显示 遮罩层
-	panel:false,     //是否显示底下的 panel
+	overlay:false,    //是否显示 遮罩层
+	buttonShow:true,     //是否显示底下的 panel
 	bgcolor:"#fff",  // Dialog 背景色
+	bgcolor_content:"#fff", // Dialog 里的  content 背景色
 	value:"",
 	animate:"top",
 	cancelText:"取消",

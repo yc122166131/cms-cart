@@ -1,10 +1,8 @@
 @charset "utf-8";
 .tzui-dialog{background:/* #119da9 */#fff;
-color:#666;box-shadow: 0px 3px 36px #fff;position:fixed;left:0px;top:0px;z-index:100;
-overflow: hidden;
-border-radius: 22px;}
+color:#666;box-shadow: 0px 0px 3em #000;position:fixed;left:0px;top:0px;z-index:100;border-radius: 22px;}
 .tzui-dialog .tzdialog_title{line-height:21px;font-family:"楷体";color:#fff;text-shadow: 1px 1px 2px #ccc;font-weight:bold;background:linear-gradient(to left,#999,rgba(0,0,0,0.8));cursor:default;padding:10px 15px;margin:0em;outline:none;cursor: move;}
-.tzui-dialog .tzdialog_content{padding:0;margin:0em;background:#EEF3FA;border-top:0;}
+.tzui-dialog .tzdialog_content{padding:0;margin:0em;background:#000;border-top:0;}
 .tzui-dialog .tzdialog_message{padding:20px 15px;}
 .tzui-dialog .delete{position: absolute;right: 15px;top: 5px;font-size: 18px;font-family: cursive;color:#fff;}
 .tzui-dialog .tzdialog_message .content{float:left;padding: 8px 20px;}

@@ -901,15 +901,20 @@
 		
 		var cart_bz = {
 				login : function(){
-					$.tzIframe({width:450,height:510,title:"您尚未登录",
-						overlay:true,
+					 $.tzIframe({width:400,height:480,title:"您尚未登录",
+						overlay:true, //是否要遮罩层
+						buttonShow:false,//是否关闭下方的按钮(for -- ajax登录界面)
 						drag:false,
-						bgcolor:"#ddd",
+						bgcolor:"#000",
+						bgcolor_content:"#000",
 						content:"${basePath}/login/logined.action",
 						callback:function(iframe,$dialog,opts){
 							if(iframe){
+								
 							}
-					}});
+					}}); 
+					
+					// $.tzAlert({bgcolor_content:"#fff"})
 				}				
 				
 		};
