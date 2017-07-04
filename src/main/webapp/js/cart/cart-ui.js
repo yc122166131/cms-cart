@@ -1,7 +1,22 @@
 /**
 购物车 cart 特效 js
 */
-
+			
+				
+				/*搜索本体 与副本 之间的 数据同步 */
+				$(function(){
+					
+					$(".replica_search_main #searchTxt").keyup(function(){
+						console.log($(this).val());
+						$(".search  #searchTxt").val($(this).val());
+					});
+					
+					$(".search  #searchTxt").keyup(function(){
+						console.log($(this).val());
+						$(".replica_search_main #searchTxt").val($(this).val());
+					});
+					
+				});
 
 
 				/*  start   置顶插件 (by yc)  */

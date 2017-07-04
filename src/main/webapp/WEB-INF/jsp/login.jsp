@@ -51,10 +51,10 @@
 				<div class="login_logo"><img src="/img/4.png"  width="300px" height="100px"/></div>
 				<div class="login_txt">
 					<div class="login_common">
-						<label for="username">用户名</label> &nbsp;<input type="text" id="username" value="" placeholder="请填写用户名..."/><br/>
+						<label for="username">用户名</label> &nbsp;<input type="text" id="username" value="" autocomplete="off" placeholder="请填写用户名..."/><br/>
 					</div>
 					<div class="login_common">
-						<label for="password"> &nbsp;密码   </label> &nbsp;<input type="text" id="password" value="" placeholder="请填写密码..."/>
+						<label for="password"> &nbsp;密码   </label> &nbsp;<input type="text" id="password" value="" autocomplete="off" placeholder="请填写密码..."/>
 					</div>
 				</div>
 					

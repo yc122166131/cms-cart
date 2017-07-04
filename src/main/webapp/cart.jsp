@@ -467,7 +467,7 @@
 					</div>
 					
 				   <div class="cart_search">
-						<input class="searchTxt" type="text" />
+						<input class="searchTxt" type="text" id="searchTxt"/>
 						<input class="searchBtn" type="button"  id="search_btn" value="搜索"/>
 					</div>
 		   		</div>
@@ -483,7 +483,7 @@
 				</div>
 				
 			   <div class="cart_search">
-					<input class="searchTxt" type="text" />
+					<input class="searchTxt" type="text"  id="searchTxt"/>
 					<input class="searchBtn" type="button"  id="search_btn" value="搜索"/>
 				</div>
 		   </div>
