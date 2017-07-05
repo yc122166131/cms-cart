@@ -876,7 +876,8 @@
 																<!-- 我的关注 -->
 																<div class="attentionContent">
 																    	<div class="inn">
-																    		<a href="javascript:void(0);" class="login-in">
+																    		<a href="javascript:void(0);" class="login-in"
+																    		onclick="cart_bz.login();">
 																    			登录
 																    		</a>后将显示您之前关注的商品
 																    	</div>
