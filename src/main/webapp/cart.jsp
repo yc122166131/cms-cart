@@ -580,9 +580,9 @@
 															<div class="cell p-sum">
 																			1121										
 															</div>
-															<div class="cell p-action">删除</div>
-															<div class="cell p-action">移到我的关注</div>
-															<div class="cell p-action">加到我的关注</div>
+															<div class="cell p-action" onclick="cart_bz.cartDel(this);">删  除</div>
+															<div class="cell p-action" onclick="cart_bz.moveToAttention(this);">移到我的关注</div>
+															<div class="cell p-action" onclick="cart_bz.addToAttention(this);">加到我的关注</div>
 														</div>
 														
 														
@@ -914,8 +914,34 @@
 							}
 					}}); 
 					
-					// $.tzAlert({bgcolor_content:"#fff"})
-				}				
+					
+				},
+				cartDel: function(obj){
+					
+					$.tzConfirm({bgcolor_content:"#fff",title:"提示",content:"确定要删除吗?",overlay:true,
+						callback:function(result){
+							alert(result);
+						}}
+					);
+					
+				},
+				moveToAttention:function(obj){
+					
+					$.tzConfirm({width:"306px",bgcolor_content:"#fff",title:"提示",content:"确定要移动到关注列表吗?",overlay:true,
+						callback:function(result){
+							alert(result);
+						}}
+					);
+				},
+				addToAttention: function(obj){
+					$.tzConfirm({width:"306px",bgcolor_content:"#fff",title:"提示",content:"确定要加入到关注列表吗?",overlay:true,
+						callback:function(result){
+							alert(result);
+						}}
+					);
+					
+				}
+				
 				
 		};
 		

@@ -36,7 +36,7 @@
 					<div class="tMenu_title"><span></span></div>
 					<ul>
 						<li>
-							<a href="javascript:void(0);">网上商城</a>
+							<a href="http://localhost:8902">网上商城</a>
 							<!-- <ul class="subul">
 								<li><a href="#">随便</a></li>
 								<li><a href="#">随便1</a></li>
